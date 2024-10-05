@@ -1,0 +1,45 @@
+.container {
+    max-width: 1440px;
+    max-height: 1766px;
+    text-align: center;
+    padding: 50px;
+    background: var(--white, #FFFFF1);
+  }
+  
+  .errorCode {
+    font-size: 144px;
+    font-weight: bold;
+    color: #6b8e23; /* Цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cactus {
+    width: 100px;
+    margin: 0 20px;
+  }
+  
+  .title {
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .button {
+    background-color: #6b8e23;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #556b2f;
+  }
