@@ -12,18 +12,19 @@ function Categories() {
      
   }, []);
 
- 
+ const partCategories = categories.slice(0, 4);
   return (
     <div className={s.categories}>
       <div className={s.header}>
         <h2>Categories</h2>
+        <div className={s.line}></div>
         <button className={s.allCategoriesButton}>All categories</button>
       </div>
       <div className={s.categoriesList}>
-        {categories.map(({ id, name, image }) => (
-          <div key={id} className={s.categoryItem}>
-            <img src={`http://localhost:3333${image}`} alt={name} />
-            <p>{name}</p>
+        {partCategories.map((element) => (
+          <div key={element.id} className={s.categoryItem}>
+            <img src={`http://localhost:3333${element.image}`} alt={element.title} />
+            <p>{element.title}</p>
           </div>
         ))}
       </div>
