@@ -1,10 +1,15 @@
 import React from 'react'
-import s from '/index.module.scss'
-import Sales from '../../components/Sales'
-
+// import Sales from '../../components/Sales'
+import Banner from '../../components/MainBanner'
+import Categories from '../../components/Categories'
+import DiscountForm from '../../components/DiscountForm'
 const MainPage = () => {
   return (
-    <div>MainPage
+    <div>
+        MainPage
+          <Banner />
+          <Categories />
+          <DiscountForm/>
       {/* <Sales/> */}
     </div>
   )
