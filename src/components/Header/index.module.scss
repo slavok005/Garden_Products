@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 1440px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--grey-divider, #ddd);
+  background: var(--white, #fffff1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.discount-banner {
+  display: flex;
+  margin: auto;
+  width: max-content;
+  padding: var(--radius-small, 6px) 16px;
+  
+  border-radius: var(--radius-small, 6px);
+  background: var(--green, #92a134);
+  color: var(--txt-white, #efe9e9);
+  text-align: center;
+}
+
+.navList a {
+    text-decoration: none;
+}
+.navList  {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 130%;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

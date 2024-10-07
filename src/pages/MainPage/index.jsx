@@ -1,9 +1,12 @@
 import React from 'react'
 import s from '/index.module.scss'
+import Sales from '../../components/Sales'
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <div>MainPage
+      {/* <Sales/> */}
+    </div>
   )
 }
 

@@ -1,0 +1,54 @@
+.discountSection {
+  max-width: 1440px;
+  max-height: 454px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: #4b5d2b;
+  color: white;
+
+  .discountInfo {
+    flex: 1;
+    text-align: center;
+
+    h2 {
+      color: var(--txt-white, #FFF);
+      font-family: Montserrat;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 110%;
+    }
+  }
+
+  .discountForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      background-color: transparent;
+      color: white;
+      border-radius: var(--radius-small, 6px);
+      border: 1px solid var(--white, #fffff1);
+    }
+
+    button {
+      padding: 10px;
+      font-size: 18px;
+      color: #333;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #b7e261;
+      }
+    }
+  }
+}
