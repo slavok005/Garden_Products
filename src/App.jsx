@@ -10,14 +10,13 @@ import DiscountForm from "./components/DiscountForm/index";
 
 function App() {
   return (
-    <div>
+    <div className="main_container">
       <Header />
       <Banner />
-      
       <Categories />
       <DiscountForm/>
       <Footer />
-      <NotFoundPage />
+      {/* <NotFoundPage /> */}
     </div>
   );
 }
