@@ -5,19 +5,25 @@ import s from "./index.module.scss";
 const NavigationBranch = () => {
     const location = useLocation(); // Получаем текущий маршрут
     const pathnames = location.pathname.split('/').filter(Boolean); // Разбиваем путь на части
+    const pathNamesMap = {
+        products: 'All Products',
+        sales: 'All Sales',
+        categories: "Categories",
+      };
   
     return (
       <div>
         <div>
           {/* Для каждого сегмента пути создаём кнопку */}
-          <button className={s.navigationbutton}>
-            <Link to="/">Main Page</Link>
+          <button className={s.mainpagebutton}>
+            <Link to="/" className='mainpagebutton'>Main Page</Link>
           </button>
-          {pathnames.map((_, index) => {
+          {pathnames.map((segment, index) => {
             const pathTo = `/${pathnames.slice(0, index + 1).join('/')}`; // Создаём путь для каждого сегмента
+            const displayName = pathNamesMap[segment] || segment;
             return (
               <button className={s.navigationbutton} key={pathTo}>
-                <Link to={pathTo}>{pathnames[index]}</Link>
+                <Link to={pathTo}>{displayName}</Link>
               </button>
             );
           })}

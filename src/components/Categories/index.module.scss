@@ -29,20 +29,24 @@
     }
 
     .allCategoriesButton {
+      width: 20%;
+      height: 60px;
                 color: var(--txt-grey, #8b8b8b);
-                
       text-align: center;
       font-family: Montserrat;
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
-      line-height: 126%;
-      border-radius: var(--radius-small, 6px);
+      border-radius: 10px;
       border: 1px solid var(--grey-divider, #ddd);
       &:hover {
         background-color: #e0e0e0;
       }
     }
+  }
+
+  .allCategoriesButton a {
+    color: black;
   }
 
   .categoriesList {

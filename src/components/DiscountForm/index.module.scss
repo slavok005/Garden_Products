@@ -40,11 +40,14 @@ h2 {
   // width: 612px;
 }
 
+.discountForm input {
+  color: white;
+}
+
 input {
   padding: 25px;
   font-size: 16px;
   background-color: transparent;
-  color: white;
   border-radius: var(--radius-small, 6px);
   border: 1px solid var(--white, #fffff1);
   width: 538px;
@@ -55,6 +58,7 @@ input {
   font-weight: 500;
   line-height: 130%;
 }
+
 .discountbutton{
   padding: 10px;
   color: #333;
