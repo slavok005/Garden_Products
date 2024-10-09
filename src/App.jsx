@@ -9,6 +9,7 @@ import Categories from "./components/Categories";
 import DiscountForm from "./components/DiscountForm/index";
 import MainPage from "./pages/MainPage";
 import Layout from "./pages/Layout";
+import TotalSales from "./components/TotalSales";
 function App() {
   return (
     <div className="main_container">
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<MainPage />} />
         </Route>
       </Routes>
+      <TotalSales/>
     </div>
   );
 }

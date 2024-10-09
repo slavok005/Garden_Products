@@ -1,0 +1,54 @@
+.sales_container {
+    max-width: 1360px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+    background: var(--white, #fffff1);
+  
+    
+    
+}
+
+h2 {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 70.4px */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .line {
+    flex-grow: 1;
+    height: 2px;
+    width: 1300px;
+    height: 1px;
+    background: #ddd;
+    margin-left: 20px;
+  }
+
+  .allSalesButton {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 20px;
+    color: var(--txt-grey, #8b8b8b);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 126%;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #ddd);
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+}
+
