@@ -14,7 +14,7 @@ function DiscountForm() {
               <input type="text" placeholder="Name" />
               <input type="text" placeholder="Phone number" />
               <input type="email" placeholder="Email" />
-              <button>Get a discount</button>
+              <button className={s.discountbutton}>Get a discount</button>
             </div>
          </div>
     </div>
