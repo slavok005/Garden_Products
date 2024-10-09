@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
-import { Link } from 'react-router-dom';
 
-function Categories() {
-  const [categories, setCategories] = useState([]);
+function AllCategories() {
+  const [allcategories, setAllCategories] = useState([]);
   
 
   useEffect(() => {
     fetch('http://localhost:3333/categories/all')
       .then(res => res.json())
-      .then(setCategories)
+      .then(setAllCategories)
      
   }, []);
 
- const partCategories = categories.slice(0, 4);
+ const partCategories = allcategories.slice(0, 5);
   return (
     <div className={s.categories}>
       <div className={s.header}>
         <h2>Categories</h2>
-        <div className={s.line}></div>
-        <button className={s.allCategoriesButton}>
-          <Link to="/categories">All Categories</Link>
-        </button>
       </div>
       <div className={s.categoriesList}>
         {partCategories.map((element) => (
@@ -35,4 +30,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default AllCategories;

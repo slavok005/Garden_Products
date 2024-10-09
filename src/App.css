@@ -3,7 +3,6 @@ html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
 }
 
 body {
@@ -31,6 +30,18 @@ button {
     cursor: pointer;
 }
 
+
+.container {
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+/* .container {
+    max-width: 1440px;
+    background-color:rgb(190, 118, 8);
+} */
+
 a {
     border: none;
     background-color: transparent;
@@ -38,4 +49,5 @@ a {
     outline: none;
     color: inherit; /* использует в элементе свойства родительского элемента*/
 }
+
 

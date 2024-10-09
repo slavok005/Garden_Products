@@ -1,9 +1,10 @@
 .container {
-    max-width: 1440px;
-    max-height: 1766px;
-    text-align: center;
-    padding: 50px;
-    background: var(--white, #FFFFF1);
+  font-family: "Montserrat", sans-serif;
+  max-width: 1440px;
+  max-height: 1766px;
+  text-align: center;
+  padding: 50px;
+  background: var(--white, #FFFFF1);
   }
   
   .errorCode {
@@ -16,7 +17,7 @@
   }
   
   .cactus {
-    width: 100px;
+    width: 150px;
     margin: 0 20px;
   }
   
@@ -26,7 +27,8 @@
   }
   
   .description {
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 14px;
     color: #777;
   }
   
