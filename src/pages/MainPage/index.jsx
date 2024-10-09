@@ -3,10 +3,12 @@ import React from 'react'
 import Banner from '../../components/MainBanner'
 import Categories from '../../components/Categories'
 import DiscountForm from '../../components/DiscountForm'
+import NavigationBranch from '../../components/NavigationBranch';
+
 const MainPage = () => {
   return (
     <div>
-        MainPage
+          {/* <NavigationBranch /> */}
           <Banner />
           <Categories />
           <DiscountForm/>

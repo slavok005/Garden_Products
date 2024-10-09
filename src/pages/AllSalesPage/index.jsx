@@ -1,9 +1,13 @@
 import React from 'react'
-import s from '/index.module.scss'
+import NavigationBranch from '../../components/NavigationBranch';
+// import s from '/index.module.scss'
 
 const AllSalesPage = () => {
   return (
-    <div>AllSalesPage</div>
+    <div>
+      AllSalesPage
+      <NavigationBranch />
+    </div>
   )
 }
 
