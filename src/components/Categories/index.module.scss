@@ -1,7 +1,7 @@
 .categories {
-  max-width: 1440px;
-  margin: 20px;
-  padding: 10px;
+  max-width: 1360px;
+  margin-left: 40px;
+  margin-bottom: 70px;
   background: var(--white, #fffff1);
 
   h2 {
@@ -29,11 +29,14 @@
     }
 
     .allCategoriesButton {
-                color: var(--txt-grey, #8b8b8b);
-                
+      display: flex;
+      align-items: center;
+      width: 150px;
+      height: 20px;
+      color: var(--txt-grey, #8b8b8b);
       text-align: center;
       font-family: Montserrat;
-      font-size: 18px;
+      font-size: 12px;
       font-style: normal;
       font-weight: 500;
       line-height: 126%;
