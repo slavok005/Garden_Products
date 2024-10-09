@@ -1,10 +1,7 @@
-* {
+.header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.header {
   width: 1440px;
   height: 130px;
   flex-shrink: 0;
@@ -33,8 +30,11 @@
   text-align: center;
 }
 
-a {
-  text-decoration: none;
+.discount-banner a {
+  color: black;
+  &:hover {
+    color: #a5a5a5;
+}
 }
 
 .navList  {
@@ -43,6 +43,7 @@ a {
   gap: 40px;
   padding: 10px 0;
   color: var(--txt-black, #424436);
+  color: #92a134;
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -50,8 +51,20 @@ a {
   font-weight: 500;
   line-height: 130%;
 }
+
+.navList a {
+  color: black;
+  &:hover {
+    color: #a5a5a5;
+}
+}
 .icons {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.style-center {
+  color: var(--txt-black, #424436);
+
 }

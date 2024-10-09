@@ -21,7 +21,7 @@ function Header() {
         <div className={s.navList}>
           <Link to="/">Main Page</Link>
           <Link to="/categories">Categories</Link>
-          <Link to="/products">All productss</Link>
+          <Link to="/products">All products</Link>
           <Link to="/sales">All sales</Link>
         </div>
       </nav>

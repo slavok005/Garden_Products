@@ -1,9 +1,15 @@
 import React from 'react'
-import s from '/index.module.scss'
+import NavigationBranch from '../../components/NavigationBranch';
+import AllCategories from '../../components/AllCategories';
+
+// import s from '/index.module.scss'
 
 const CategoriesPage = () => {
   return (
-    <div>CategoriesPage</div>
+    <div>
+      <NavigationBranch />
+      <AllCategories />
+    </div>
   )
 }
 

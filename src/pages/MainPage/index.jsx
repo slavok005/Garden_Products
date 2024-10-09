@@ -3,6 +3,12 @@ import Banner from "../../components/MainBanner";
 import Categories from "../../components/Categories";
 import DiscountForm from "../../components/DiscountForm";
 import BannerSales from "../../components/BannerSales";
+import React from 'react'
+// import Sales from '../../components/Sales'
+import Banner from '../../components/MainBanner'
+import Categories from '../../components/Categories'
+import DiscountForm from '../../components/DiscountForm'
+import NavigationBranch from '../../components/NavigationBranch';
 
 const MainPage = () => {
   return (
@@ -11,6 +17,12 @@ const MainPage = () => {
       <Categories />
       <DiscountForm />
       <BannerSales />
+          {/* <NavigationBranch /> */}
+          <Banner />
+          <Categories />
+          <DiscountForm/>
+          
+
     </div>
   );
 };

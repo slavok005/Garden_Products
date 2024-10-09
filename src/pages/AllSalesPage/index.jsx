@@ -1,9 +1,14 @@
 import React from 'react'
-import s from '/index.module.scss'
+import NavigationBranch from '../../components/NavigationBranch';
+import AllSales from '../../components/AllSales';
+// import s from '/index.module.scss'
 
 const AllSalesPage = () => {
   return (
-    <div>AllSalesPage</div>
+    <div>
+      <NavigationBranch />
+      <AllSales />
+    </div>
   )
 }
 

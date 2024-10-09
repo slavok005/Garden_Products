@@ -1,4 +1,13 @@
 .main_container {
     max-width: 1440px;
     background: var(--white, #FFFFF1);
+
+}
+
+a {
+    text-decoration: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
 }
