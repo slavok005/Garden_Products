@@ -1,0 +1,99 @@
+.BanCon {
+  max-width: 1440px;
+  margin: 0;
+  padding: 20px;
+
+  .BanSal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .line {
+      flex-grow: 1;
+      height: 2px;
+      background-color: #0c0303;
+      margin: 0 20px;
+    }
+
+    .allProductsButton {
+      padding: 10px 20px;
+      background-color: #4b5d2b;
+      color: white;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #b7e261;
+      }
+    }
+  }
+
+  .Sales {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 карточки в строку
+    gap: 20px; // Расстояние между карточками
+  }
+  .discount {
+    color: var(--txt-black, #424436);
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 70.4px */
+  }
+
+  .productImage {
+    height: 284px;
+    width: 200px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-bottom: 1px solid var(--grey-divider, #ddd);
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  }
+  .ProductsCard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .tegi {
+      text-align: center;
+
+      h3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        align-self: stretch;
+        overflow: hidden;
+        color: var(--txt-black, #424436);
+        text-overflow: ellipsis;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 26px */
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .priceBefore {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 5px;
+      }
+    }
+  }
+}
