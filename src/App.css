@@ -30,6 +30,7 @@ button {
     cursor: pointer;
 }
 
+
 .container {
     width: 100%;
     padding: 0 40px;
@@ -40,3 +41,13 @@ button {
     max-width: 1440px;
     background-color:rgb(190, 118, 8);
 } */
+
+a {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    color: inherit; /* использует в элементе свойства родительского элемента*/
+}
+
+

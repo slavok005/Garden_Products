@@ -12,7 +12,7 @@ const MainPage = () => {
           <Banner />
           <Categories />
           <DiscountForm/>
-      {/* <Sales/> */}
+          
     </div>
   )
 }
