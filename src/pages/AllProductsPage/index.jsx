@@ -1,17 +1,18 @@
-import React from 'react'
-// import s from '/index.module.scss'
-import NavigationBranch from '../../components/NavigationBranch';
-import Products from '../../components/AllProducts';
+import React from "react";
+// import s from './index.module.scss' // Проверьте правильность пути к файлу стилей
+import NavigationBranch from "../../components/NavigationBranch";
+import Products from "../../components/AllProducts";
 
 const AllProductsPage = () => {
   return (
-    <div>AllProductsPage
-      123 123 123
     <div>
-      <NavigationBranch />
-      <Products />
+      <h1>All Products Page</h1>
+      <div>
+        <NavigationBranch />
+        <Products />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default AllProductsPage
+export default AllProductsPage;
