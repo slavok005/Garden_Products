@@ -1,9 +1,13 @@
+.navigation_branch {
+    display: flex;
+}
+
 .navigationbutton {
     width: 120px;
     height: 37px;
     text-decoration: none;
     color: black;
-    margin: 8px 13px;
+    margin: 8px 0px;
     text-align: center;
     font-family: Montserrat;
     font-size: 15px;
@@ -22,7 +26,8 @@
     height: 37px;
     text-decoration: none;
     // color: black;
-    margin: 8px 13px;
+    margin: 8px 0px;
+    margin-left: 30px;
     text-align: center;
     font-family: Montserrat;
     font-size: 15px;
@@ -38,4 +43,13 @@
 
 .navigationbutton a {
     color: black;
+}
+
+.line {
+    margin: 25px 0px;
+    height: 2px;
+    width: 25px;
+    height: 1px;
+    background: #ddd;
+    // margin-left: 20px;
 }

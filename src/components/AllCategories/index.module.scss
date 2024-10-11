@@ -47,7 +47,7 @@
   
     .categoriesList {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 32px;
     }
   
@@ -63,12 +63,14 @@
   
       img {
         display: flex;
-        width: 100%;
+        width: 248px;
         height: 350px;
         flex-direction: column;
         align-items: center;
         gap: 16px;
         flex-shrink: 0;
+        border-radius: 8px;
+        object-fit: cover;
       }
   
       p {
