@@ -17,7 +17,9 @@ export default function BannerSales() {
       <div className={s.BanSal}>
         <h2 className={s.discount}>Sale</h2>
         <div className={s.line}></div>
-        <button className={s.allProductsButton}>All sales</button>
+        <button className={s.allProductsButton}>All Sales
+          {/* <Link to="/sales">All Sales</Link> */}
+        </button>
       </div>
       <div className={s.Sales}>
         {productsState.map((product) => (

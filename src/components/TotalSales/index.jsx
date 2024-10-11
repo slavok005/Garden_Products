@@ -7,7 +7,7 @@ const TotalSales = () => {
     return (
         <div className={s.sales_container}>
         <div className={s.header}>
-            <h2>Sale</h2>
+            <h2 className={s.sale}>Sale</h2>
             <div className={s.line}></div>
             <button className={s.allSalesButton}>All sales</button>
         </div>
