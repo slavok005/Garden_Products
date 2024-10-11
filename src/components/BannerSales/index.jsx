@@ -24,9 +24,9 @@ export default function BannerSales() {
   return (
     <div className={s.sales_container}>
       <div className={s.header}>
-        <h2>Sale</h2>
+        <h2 className={s.sale_title}>Sale</h2>
         <div className={s.line}></div>
-        <button className={s.allSalesButton}>All sales</button>
+        {/* <button className={s.allSalesButton}>All sales</button> */}
         <button className={s.allProductsButton}>
           All Sales
           {/* <Link to="/sales">All Sales</Link> */}
