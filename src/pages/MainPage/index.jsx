@@ -16,6 +16,6 @@ const MainPage = () => {
           <BannerSales/>
     </div>
   )
-}
+}                             
 
 export default MainPage

@@ -1,99 +1,103 @@
-.BanCon {
-  max-width: 1440px;
-  margin: 0;
-  padding: 20px;
-
-  .BanSal {
+.sales_container {
+  max-width: 1360px; /* Максимальная ширина для контейнера */
+  margin: 0 auto; /* Выравнивание по центру страницы */
+  padding: 30px;
+  
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     h2 {
-      font-size: 36px;
-      font-weight: bold;
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
     }
 
     .line {
       flex-grow: 1;
       height: 2px;
-      background-color: #0c0303;
+      background-color: #ccc;
       margin: 0 20px;
     }
 
-    .allProductsButton {
-      padding: 10px 20px;
-      background-color: #4b5d2b;
+    .allSalesButton {
+      background-color: #ff6f61;
       color: white;
       border: none;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
 
       &:hover {
-        background-color: #b7e261;
+        background-color: #e85c51;
       }
     }
   }
 
   .Sales {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); // 4 карточки в строку
-    gap: 20px; // Расстояние между карточками
-  }
-  .discount {
-    color: var(--txt-black, #424436);
-    font-family: Montserrat;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 110%; /* 70.4px */
+   display: flex;               // Flexbox для расположения карточек
+  flex-wrap: wrap;            // Позволяет карточкам переноситься на новую строку
+  justify-content: space-between; // Разделяем карточки
+
   }
 
-  .productImage {
-    height: 284px;
-    width: 200px;
-    flex-shrink: 0;
-    align-self: stretch;
-    border-bottom: 1px solid var(--grey-divider, #ddd);
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-  }
   .ProductsCard {
-    background-color: #f4f4f4;
-    padding: 20px;
+    display: flex;
+    padding: 18px 18px 18px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    background-color: #faf7f7;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    overflow: hidden;
+    transition: transform 0.3s;
 
     &:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px); /* Легкое движение вверх при наведении */
     }
 
     .tegi {
-      text-align: center;
-
+      display: flex;                   // Flexbox для выравнивания содержимого
+      flex-direction: column;          // Вертикальное расположение элементов
+      flex-grow: 1;                    // Позволяет занимать доступное пространство
+      justify-content: space-between;   // Выравнивание элементов
+      align-items: center;             // Центрирование элементов
+    
       h3 {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        align-self: stretch;
-        overflow: hidden;
-        color: var(--txt-black, #424436);
-        text-overflow: ellipsis;
-        font-family: Montserrat;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%; /* 26px */
-      }
-
-      p {
-        font-size: 16px;
+        font-size: 18px;
+        color: #333;
         margin-bottom: 10px;
       }
 
-      .priceBefore {
-        text-decoration: line-through;
-        color: #888;
-        margin-right: 5px;
+      p {
+        color: var(--txt-black, #424436);
+        font-family: Montserrat;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 44px */
       }
     }
+    
+    .productImage {
+      width: 100%; /* Ширина изображения равна ширине карточки */
+      height: 284px; /* Фиксированная высота для изображений */
+      object-fit: cover; /* Чтобы изображение сохраняло пропорции и не обрезалось */
+    }
   }
+}
+
+.price {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 44px */     // Автоматический отступ сверху для выравнивания
 }

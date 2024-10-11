@@ -11,21 +11,38 @@ export default function BannerSales() {
   }, [dispatch]);
 
   const productsState = useSelector((store) => store.products);
- 
+
+ // Функция для сокращения текста до 3 слов
+  const truncateDescription = (description) => {
+    const words = description.split(" ");
+    return words.length > 2 ? `${words.slice(0, 2).join(" ")}...` : description;
+  };
+
+  const truncateText = (text) => {
+    const words = text.split(" ");
+    return words.length > 3 ? `${words.slice(0, 3).join(" ")}...` : text;
+  };
+
   return (
-    <div className={s.BanCon}>
-      <div className={s.BanSal}>
-        <h2 className={s.discount}>Sale</h2>
+    <div className={s.sales_container}>
+      <div className={s.header}>
+        <h2>Sale</h2>
         <div className={s.line}></div>
-        <button className={s.allProductsButton}>All sales</button>
+        <button className={s.allSalesButton}>All sales</button>
       </div>
+
       <div className={s.Sales}>
-        {productsState.map((product) => (
+        {productsState.slice(0, 4).map((product) => (
           <div key={product.id} className={s.ProductsCard}>
+            <img
+              src={`http://localhost:3333${product.image}`}
+              alt={product.title}
+              className={s.productImage}
+            />
             <div className={s.tegi}>
-          <img src={product.image} alt={product.title} className={s.productImage} />
-            <h3>{product.title}</h3>
-            <p>Price: ${product.price}</p>
+              <h3>{truncateText(product.title)}</h3>
+              
+              <p className={s.price}>Price: ${product.price}</p> {/* Добавьте класс для цены */}
             </div>
           </div>
         ))}
