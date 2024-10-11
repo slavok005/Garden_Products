@@ -22,11 +22,11 @@ export default function BannerSales() {
       <div className={s.Sales}>
         {productsState.map((product) => (
           <div key={product.id} className={s.ProductsCard}>
-            <dav className={s.tegi}>
+            <div className={s.tegi}>
           <img src={product.image} alt={product.title} className={s.productImage} />
             <h3>{product.title}</h3>
             <p>Price: ${product.price}</p>
-            </dav>
+            </div>
           </div>
         ))}
       </div>
