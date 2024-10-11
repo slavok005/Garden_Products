@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
+import heart from '/public/heart.svg';
+import bag from '/public/bag.svg';
 
 function AllProducts() {
     const [products, setProducts] = useState([]);
@@ -19,8 +21,15 @@ function AllProducts() {
                 <div className={s.productsList}>
                     {partProducts.map((element) => (
                     <div key={element.id} className={s.productsItem}>
-                        <img src={`http://localhost:3333${element.image}`} alt={element.title} />
+                        <img src={`http://localhost:3333${element.image}`} 
+                        // alt={element.title} 
+                        />
+                    <div className={s.icon_container}>
+                        <img src={heart} className={s.icon} alt="Heart Icon" />
+                        <img src={bag} className={s.icon} alt="Bag Icon" />
+                    </div>
                         <p>{element.title}</p>
+                        <p className={s.new_price}>${element.price}</p>
                     </div>
                     ))}
                 </div>

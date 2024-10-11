@@ -13,11 +13,14 @@ const NavigationBranch = () => {
   
     return (
       <div>
-        <div>
+        <div className={s.navigation_branch}>
           {/* Для каждого сегмента пути создаём кнопку */}
           <button className={s.mainpagebutton}>
             <Link to="/" className='mainpagebutton'>Main Page</Link>
           </button>
+
+          <div className={s.line}></div>
+
           {pathnames.map((segment, index) => {
             const pathTo = `/${pathnames.slice(0, index + 1).join('/')}`; // Создаём путь для каждого сегмента
             const displayName = pathNamesMap[segment] || segment;

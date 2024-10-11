@@ -11,9 +11,12 @@ const Footer = () => {
           <div className={s.contact_container}>
                 <div className={s.contact_item}>
                     <h3>Phone</h3>
-                    <Link to="https://wa.me/+499999999999" target="_blank">
-                      +49 999 999 99 99
-                    </Link>
+                      <div className={s.phone}>
+                        <Link to="https://wa.me/+499999999999" target="_blank">
+                        +49 999 999 99 99
+                        </Link>
+                      </div>
+                    
                 </div>
                 <div className={s.contact_item}>
                     <h3>Socials</h3>

@@ -16,18 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
-        </Route>
-        <Route path="/error" element={<Layout />}>
-          <Route index element={<NotFoundPage/>} />
-        </Route>
-        <Route path="/products" element={<Layout />}>
-          <Route index element={<AllProductsPage />} />
-        </Route>
-        <Route path="/sales" element={<Layout />}>
-          <Route index element={<AllSalesPage />} />
-        </Route>
-        <Route path="/categories" element={<Layout />}>
-          <Route index element={<CategoriesPage />} />
+          <Route path="/error" element={<NotFoundPage />} />
+          <Route path="/products" element={<AllProductsPage />} />
+          <Route path="/sales" element={<AllSalesPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       </Routes>
       <TotalSales/>
