@@ -1,130 +1,129 @@
+
+
 .sales_container {
-  max-width: 1360px; /* Максимальная ширина для контейнера */
+  max-width: 1430px; /* Максимальная ширина для контейнера */
   margin: 0 auto; /* Выравнивание по центру страницы */
   padding: 30px;
 }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-    h2 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #333;
-    }
 
-    .line {
-      flex-grow: 1;
-      height: 2px;
-      background-color: #ccc;
-      margin: 0 20px;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
 
 
-    .allSalesButton {
-      background-color: #ff6f61;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+.sale_title {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 70.4px */
+}
 
-      &:hover {
-        background-color: #e85c51;
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0 20px;
+}
 
-    .allProductsButton {
-      padding-top: 8px;
-      padding-right: 16px;
-      padding-bottom: 8px;
-      padding-left: 16px;
-      gap: 10px;
-      width: 100px;
-      height: 40px;
-      text-decoration: none;
-      color: black;
-      margin: 8px 13px;
-      text-align: center;
-      font-family: Montserrat;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 500;
-      border-radius: 5px;
-      border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
-      &:hover a{
-          color: black;
+.allSalesButton {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
-      }
-    }
+.allSalesButton:hover {
+  background-color: #e85c51;
+}
 
-    .allProductsButton a {
-      color: gray;
-    }
-  }
+.allProductsButton {
+  padding: 8px 16px;
+  gap: 10px;
+  width: 100px;
+  height: 40px;
+  text-decoration: none;
+  color: black;
+  margin: 8px 13px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
+}
 
-  .Sales {
-   display: flex;               // Flexbox для расположения карточек
-  flex-wrap: wrap;            // Позволяет карточкам переноситься на новую строку
-  justify-content: space-between; // Разделяем карточки
+.allProductsButton:hover a {
+  color: black;
+}
 
-  }
+.allProductsButton a {
+  color: gray;
+}
 
-  .ProductsCard {
-    display: flex;
-    padding: 18px 18px 18px 18px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    flex: 1 0 0;
-    background-color: #faf7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
-    overflow: hidden;
-    transition: transform 0.3s;
+.Sales {
+  display: flex; /* Flexbox или Grid для корректной работы gap */
+  flex-wrap: nowrap; /* Позволяет карточкам переноситься на новую строку */
+  gap: 32px; /* Применяется для отступов между карточками */
+}
 
-    &:hover {
-      transform: translateY(-5px); /* Легкое движение вверх при наведении */
-    }
+.ProductsCard {
+  display: flex;
+  padding: 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #faf7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  overflow: hidden;
+  transition: transform 0.3s;
+}
 
-    .tegi {
-      display: flex;                   // Flexbox для выравнивания содержимого
-      flex-direction: column;          // Вертикальное расположение элементов
-      flex-grow: 1;                    // Позволяет занимать доступное пространство
-      justify-content: space-between;   // Выравнивание элементов
-      align-items: center;             // Центрирование элементов
-    
-      h3 {
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 10px;
-      }
 
-      p {
-        color: var(--txt-black, #424436);
-        font-family: Montserrat;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 110%; /* 44px */
-      }
-    }
-    
-    .productImage {
-      width: 100%; /* Ширина изображения равна ширине карточки */
-      height: 284px; /* Фиксированная высота для изображений */
-      object-fit: cover; /* Чтобы изображение сохраняло пропорции и не обрезалось */
-    }
-  }
+.ProductsCard:hover {
+  transform: translateY(-5px); /* Легкое движение вверх при наведении */
+}
+
+.tegi {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tegi h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tegi p {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%; /* 44px */
+}
+
+.productImage {
+  width: 100%; /* Ширина изображения равна ширине карточки */
+  height: 284px; /* Фиксированная высота для изображений */
+  object-fit: cover; /* Чтобы изображение сохраняло пропорции и не обрезалось */
 }
 
 .price {
   color: var(--txt-black, #424436);
   font-family: Montserrat;
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 44px */     // Автоматический отступ сверху для выравнивания
+  line-height: 110%; /* 44px */
 }

@@ -22,7 +22,7 @@ function App() {
           <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       </Routes>
-      <TotalSales/>
+      {/* <TotalSales/> */}
     </div>
   );
 }
