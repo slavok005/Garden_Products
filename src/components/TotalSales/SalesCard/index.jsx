@@ -3,8 +3,8 @@
 import React from 'react';
 import s from './index.module.scss';
 import img from '../images/image_categories/1.svg';
-import heart from '../images/image_categories/heart.svg';
-import bag from '../images/image_categories/bag.svg';
+// import heart from '../images/image_categories/heart.svg';
+// import bag from '../images/image_categories/bag.svg';
 
 const SalesCard = () => {
     return (
