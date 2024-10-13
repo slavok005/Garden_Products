@@ -6,3 +6,4 @@ export const getAllProducts = (dispatch) => {
     .then((json) => dispatch(loadAllProductsAction(json)))
     .catch((error) => console.error("Error fetching all products:", error));
 };
+

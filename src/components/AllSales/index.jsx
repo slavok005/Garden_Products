@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
 import heart from '/public/heart.svg';
 import bag from '/public/bag.svg';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProducts } from '../requests/products';
 
 function AllSales() {
-    const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('http://localhost:3333/products/all')
-        .then(res => res.json())
-        .then(setProducts)
+      dispatch(getAllProducts);
     }, []);
+  
+    const productsState = useSelector((store) => store.products);
 
-    const discountedProducts = products.filter(product => product.discont_price > 0);
+
+    const discountedProducts = productsState.filter(product => product.discont_price > 0);
         return (
             <div className={s.products}>
                 <div className={s.header}>
