@@ -1,5 +1,3 @@
-
-
 .sales_container {
   max-width: 1430px; /* Максимальная ширина для контейнера */
   margin: 0 auto; /* Выравнивание по центру страницы */
@@ -12,7 +10,6 @@
   align-items: center;
   margin-bottom: 30px;
 }
-
 
 .sale_title {
   color: var(--txt-black, #424436);
@@ -76,17 +73,19 @@
 }
 
 .ProductsCard {
+  position: relative;
   display: flex;
-  padding: 18px;
+  width: 316px;
+  height: 440px;
   flex-direction: column;
-  align-items: flex-start;
-  background-color: #faf7f7;
+  justify-content: flex-start;
+  gap: 25px;
+  background: #FFF;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
   overflow: hidden;
   transition: transform 0.3s;
 }
-
 
 .ProductsCard:hover {
   transform: translateY(-5px); /* Легкое движение вверх при наведении */
@@ -96,22 +95,17 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  padding-left: 25px;
+  gap: 20px;
+  position: relative;
 }
 
 .tegi h3 {
   font-size: 18px;
   color: #333;
   margin-bottom: 10px;
-}
-
-.tegi p {
-  color: var(--txt-black, #424436);
-  font-family: Montserrat;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 110%; /* 44px */
+  overflow: hidden;
 }
 
 .productImage {
@@ -120,10 +114,65 @@
   object-fit: cover; /* Чтобы изображение сохраняло пропорции и не обрезалось */
 }
 
-.price {
+.price_container {
+  gap: 22px;
+  display: flex;
+}
+
+.old_price {
   color: var(--txt-black, #424436);
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 40px;
+  font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 44px */
+  line-height: 110%;
+}
+
+.new_price {
+  margin-top: 17px;
+  color: var(--txt-grey, #8B8B8B);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  text-decoration-line: strikethrough;
+}
+
+.icon_container {
+  position: absolute; /* Абсолютное позиционирование для контейнера иконок */
+  top: 10px; /* Расположение от верхнего края карточки */
+  right: 10px; /* Расположение от правого края карточки */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Расстояние между иконками */
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;  /* Курсор для интерактивных элементов */
+}
+
+.icon:hover {
+  transform: translateZ(10px) scale(1.1); /* Легкое движение вперед и увеличение */
+}
+
+.discount_info {
+  width: 55px;
+  height: 30px;
+  background-color: rgb(234, 118, 76);
+  color: var(--txt-white, #fff);
+  font-family: Montserrat;
+  font-size: 20px;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+  position: absolute; /* Абсолютное позиционирование для логотипа со скидкой */
+  top: 10px; /* Расположение от верхнего края карточки */
+  left: 10px; /* Расположение от левого края карточки */
 }

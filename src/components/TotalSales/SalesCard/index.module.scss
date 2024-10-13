@@ -48,7 +48,13 @@
 .icon {
   width: 48px;
   height: 48px;
-  cursor: pointer; /* Курсор для интерактивных элементов */
+  // cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;  /* Курсор для интерактивных элементов */
+}
+
+.icon:hover {
+  transform: translateZ(10px) scale(1.1); /* Легкое движение вперед и увеличение */
 }
 
 .description {
