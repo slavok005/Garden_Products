@@ -1,0 +1,100 @@
+.sales_card {
+  width: 316px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  border-radius: var(--radius-big, 12px);
+  border: 1px solid var(--grey-divider, #DDD);
+  background: #FFF;
+}
+
+.image_container {
+  position: relative; /* Относительное позиционирование для контейнера изображения */
+  width: 100%; /* Ширина 100% для корректного отображения */
+  height: auto; /* Высота автоматически подстраивается */
+}
+
+.sale_image {
+  width: 100%; /* Полная ширина изображения */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+.discount_info {
+  width: 50px;
+  height: 25px;
+  background-color: rgb(240, 106, 58);
+  color: var(--txt-white, #fff);
+  font-family: Montserrat;
+  font-size: 20px;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+  position: absolute; /* Абсолютное позиционирование для логотипа со скидкой */
+  top: 10px; /* Расположение от верхнего края карточки */
+  left: 10px; /* Расположение от левого края карточки */
+}
+
+.icon_container {
+  position: absolute; /* Абсолютное позиционирование для контейнера иконок */
+  top: 10px; /* Расположение от верхнего края карточки */
+  right: 10px; /* Расположение от правого края карточки */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Расстояние между иконками */
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  // cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;  /* Курсор для интерактивных элементов */
+}
+
+.icon:hover {
+  transform: translateZ(10px) scale(1.1); /* Легкое движение вперед и увеличение */
+}
+
+.description {
+  color: var(--txt-black, #424436);
+  text-overflow: ellipsis;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  padding-left: 30px;
+}
+
+.price_container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding-left: 30px;
+  gap: 20px;
+}
+
+.old_price {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.new_price {
+  color: var(--txt-grey, #8b8b8b);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  text-decoration-line: strikethrough;
+  margin-top: 17px;
+}

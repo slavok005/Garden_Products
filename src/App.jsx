@@ -3,11 +3,11 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Layout from "./pages/Layout";
-import TotalSales from "./components/TotalSales";
 import AllProductsPage from "./pages/AllProductsPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import "./index.css";
+import ProductsCard from "./components/ProductCard";
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
           <Route path="/categories" element={<CategoriesPage />} />
         </Route>
       </Routes>
-      {/* <TotalSales/> */}
     </div>
   );
 }
