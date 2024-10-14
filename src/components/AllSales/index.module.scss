@@ -1,17 +1,25 @@
+.sortedby {
+  font-family: "Montserrat", sans-serif;
+  margin: 50px 0px;
+  display: flex;
+  width: 908px;
+  height: 36px;
+}
+
 .products {
   max-width: 1440px;
   margin: 20px;
   padding: 10px;
   background: var(--white, #fffff1);
 
-  h2 {
-    color: var(--txt-black, #424436);
-    font-family: Montserrat;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 110%; /* 70.4px */
-  }
+  // h2 {
+  //   color: var(--txt-black, #424436);
+  //   font-family: Montserrat;
+  //   font-size: 64px;
+  //   font-style: normal;
+  //   font-weight: 700;
+  //   line-height: 110%; /* 70.4px */
+  // }
 
   .header {
     display: flex;

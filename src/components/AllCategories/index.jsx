@@ -9,10 +9,10 @@ function AllCategories() {
     fetch('http://localhost:3333/categories/all')
       .then(res => res.json())
       .then(setAllCategories)
-     
+
   }, []);
 
- const partCategories = allcategories.slice(0, 5);
+const partCategories = allcategories.slice(0, 5);
   return (
     <div className={s.categories}>
       <div className={s.header}>

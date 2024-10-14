@@ -11,7 +11,9 @@
   background: linear-gradient(80deg, #87933D -0.68%, #55610B 66.66%), linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
 }
 
-h2 {
+.discountSection h2 {
+  margin: 0px 0px;
+  margin-top: 10px;
   color: var(--txt-white, #FFF);
   text-align: center;
   font-family: Montserrat;
@@ -21,7 +23,7 @@ h2 {
   line-height: 110%;
 }
 
-a {
+.discountSection a {
   color: white;
 }
 
@@ -45,11 +47,9 @@ a {
   // width: 612px;
 }
 
-.discountForm input{
-  color: white;
-}
 
-input {
+.discountForm input {
+  color: white;
   padding: 25px;
   font-size: 16px;
   background-color: transparent;
