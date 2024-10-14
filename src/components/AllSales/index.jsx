@@ -4,24 +4,26 @@ import heart from '/public/heart.svg';
 import bag from '/public/bag.svg';
 import SortByPrice from '../SortBy/Price';
 import SortByOption from '../SortBy/Option';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProducts } from '../requests/products';
 
 
-function AllSales() {
 
-    const [products, setProducts] = useState([]);
+function AllSales() {    
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('http://localhost:3333/products/all')
-        .then(res => res.json())
-        .then(setProducts)
+      dispatch(getAllProducts);
     }, []);
+  
+    const productsState = useSelector((store) => store.products);
 
     const [discountedProducts] = useState(true);
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
     const [sortOption, setSortOption] = useState('');
 
-    const filteredProducts = products
+    const filteredProducts = productsState
     .filter((product) => {
         return discountedProducts ? product.discont_price !== null : true;
     })

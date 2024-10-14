@@ -5,25 +5,26 @@ import bag from '/bag.svg';
 import SortByPrice from '../SortBy/Price';
 import SortByDiscount from '../SortBy/Discount';
 import SortByOption from '../SortBy/Option';
+import { getAllProducts } from '../requests/products';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function AllProducts() {
 
-    const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('http://localhost:3333/products/all')
-        .then(res => res.json())
-        .then(setProducts)
+         dispatch(getAllProducts);
     }, []);
-
+   
+    const productsState = useSelector((store) => store.products);
     const [showDiscounted, setShowDiscounted] = useState(false);
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
     const [sortOption, setSortOption] = useState('');
 
 
-    const filteredProducts = products
+    const filteredProducts = productsState
     .filter((product) => {
         return showDiscounted ? product.discont_price !== null : true;
     })
