@@ -1,10 +1,10 @@
 .sales_card {
   width: 316px;
-  height: 460px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 28px;
   position: relative;
   border-radius: var(--radius-big, 12px);
   border: 1px solid var(--grey-divider, #DDD);
@@ -97,5 +97,6 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
+  margin-top: -20px;
 }
 
