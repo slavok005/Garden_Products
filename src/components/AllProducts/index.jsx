@@ -14,8 +14,7 @@ function AllProducts() {
   
     const productsState = useSelector((store) => store.products);
 
-   
-        return (
+           return (
             <div className={s.products}>
                 <div className={s.header}>
                     <h2>All Products</h2>
@@ -23,9 +22,7 @@ function AllProducts() {
                 <div className={s.productsList}>
                     {productsState.map((element) => (
                     <div key={element.id} className={s.productsItem}>
-                        <img src={`http://localhost:3333${element.image}`} 
-                        // alt={element.title} 
-                        />
+                        <img src={`http://localhost:3333${element.image}`}/>
                     <div className={s.icon_container}>
                         <img src={heart} className={s.icon} alt="Heart Icon" />
                         <img src={bag} className={s.icon} alt="Bag Icon" />
