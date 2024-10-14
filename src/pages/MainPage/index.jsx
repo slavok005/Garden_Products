@@ -5,6 +5,7 @@ import Categories from '../../components/Categories'
 import DiscountForm from '../../components/DiscountForm'
 import NavigationBranch from '../../components/NavigationBranch';
 import BannerSales from '../../components/BannerSales';
+import SingleProductCard from '../../components/SingleProductCard';
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
           {/* <NavigationBranch /> */}
           <Banner />
           <Categories />
+          <SingleProductCard/>
           <DiscountForm/>
           <BannerSales/>
     </div>
