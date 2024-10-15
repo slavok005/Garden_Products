@@ -7,7 +7,10 @@ import AllProductsPage from "./pages/AllProductsPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import "./index.css";
+
 import SingleProductPage from "./pages/SingleProductPage";
+
+
 
 function App() {
   return (
