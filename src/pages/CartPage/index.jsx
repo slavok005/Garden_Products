@@ -1,12 +1,12 @@
 import React from 'react'
-import NavigationBranch from '../../components/NavigationBranch';
+import Cart from '../../components/Cart';
 
 // import s from '/index.module.scss'
 
 const CartPage = () => {
 return (
     <div>
-        <NavigationBranch />
+        <Cart />
     </div>
 )
 }

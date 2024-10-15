@@ -9,6 +9,7 @@ const NavigationBranch = () => {
         products: 'All Products',
         sales: 'All Sales',
         categories: "Categories",
+        favorites: "Liked products"
       };
   
     return (
