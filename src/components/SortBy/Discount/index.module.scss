@@ -2,18 +2,18 @@
     margin: 0px 10px;
     align-items: center;
     display: flex;
-}
-
-.sortedbydiscount b{
-    display:inline;
+    b {
+        display:inline;
     align-items: center;
-}
-
-
-.sortedbydiscount input{
-    border-radius: 5px;
-    border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
-    margin: 0px 10px;
-    width: 36px;
-    height: 36px;
+    }
+    
+    .checkbox input{
+        display: grid;
+        // position: absolute;    
+        border-radius: 5px;
+        border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
+        margin: 0px 10px;
+        width: 36px;
+        height: 36px;
+    }    
 }

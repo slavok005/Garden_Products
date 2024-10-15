@@ -6,7 +6,8 @@ import img from "./images/2.svg";
 import { Link } from "react-router-dom";
 
 
-const ProductsCard = ({
+const ProductsCard = (
+  {
     id,
     title,
     image,
@@ -15,8 +16,8 @@ const ProductsCard = ({
     description,
   }) => {
     const truncateDescription = (description) => {
-      const words = description.split(" ");
-      return words.length > 2 ? `${words.slice(0, 3).join(" ")}...` : description;
+      const words = title.split(" ");
+      return words.length > 2 ? `${words.slice(0, 2).join(" ")}...` : title;
     };
   
     const discountPercentage = discont_price
@@ -40,19 +41,23 @@ const ProductsCard = ({
             <img src={bag} className={s.icon} alt="Bag Icon" />
           </div>
         </div>
-        <p className={s.description}>{truncateDescription(description)}</p>
-        <div className={s.price_container}>
-          {/* Если есть скидочная цена, показываем ее и оригинальную цену */}
-          {discont_price ? (
-            <>
-              <p className={s.new_price}>${discont_price}</p>
-              <p className={s.old_price}>${price}</p>
-            </>
-          ) : (
-            // Если скидочной цены нет, просто показываем оригинальную цену
-            <p className={s.new_price}>${price}</p>
-          )}
-        </div>
+        <div className={s.price_box}>
+          <div className={s.description}>
+            <p className={s.descriptionp}>{truncateDescription(title)}</p>
+          </div>          
+          <div className={s.price_container}>
+            {/* Если есть скидочная цена, показываем ее и оригинальную цену */}
+            {discont_price ? (
+              <>
+                <p className={s.new_price}>${discont_price}</p>
+                <p className={s.old_price}>${price}</p>
+              </>
+            ) : (
+              // Если скидочной цены нет, просто показываем оригинальную цену
+              <p className={s.new_price}>${price}</p>
+            )}
+          </div>
+        </div>        
       </div>
         </Link>
 

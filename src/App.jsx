@@ -7,10 +7,9 @@ import AllProductsPage from "./pages/AllProductsPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import "./index.css";
-
+import CartPage from "./pages/CartPage";
+import FavoritePage from "./pages/FavoritePage";
 import SingleProductPage from "./pages/SingleProductPage";
-
-
 
 function App() {
   return (
@@ -22,6 +21,8 @@ function App() {
           <Route path="/products" element={<AllProductsPage />} />
           <Route path="/sales" element={<AllSalesPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/favorites" element={<FavoritePage />} />
           <Route path="/products/:id" element={<SingleProductPage />} />
         </Route>
       </Routes>

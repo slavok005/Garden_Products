@@ -27,8 +27,12 @@ function Header() {
       </nav>
 
       <div className={s.icons}>
-        <img className="icon" src={img2} alt="icon" />
-        <img className="card" src={img3} alt="card" />
+        <Link to="/favorites">
+          <img className="icon" src={img2} alt="icon" />
+        </Link>
+        <Link to="/cart">
+          <img className="card" src={img3} alt="card" />
+        </Link>
       </div>
     </header>
   );
