@@ -8,16 +8,21 @@ import AllSalesPage from "./pages/AllSalesPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import "./index.css";
 
+import SingleProductPage from "./pages/SingleProductPage";
+
+
+
 function App() {
   return (
     <div className="main_container">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
-          <Route path="/error" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route path="/products" element={<AllProductsPage />} />
           <Route path="/sales" element={<AllSalesPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/products/:id" element={<SingleProductPage />} />
         </Route>
       </Routes>
     </div>
