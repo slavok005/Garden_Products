@@ -3,6 +3,8 @@ import s from "./index.module.scss";
 import bag from "./images/bag.svg";
 import heart from "./images/heart.svg";
 import img from "./images/2.svg";
+import { Link } from "react-router-dom";
+
 
 const ProductsCard = (
   {
@@ -23,7 +25,8 @@ const ProductsCard = (
       : null;
   
     return (
-      <div key={id} className={s.sales_card}>
+        <Link to = {`/products/${id}`} >
+        <div key={id} className={s.sales_card}>
         <div className={s.image_container}>
           <img
             src={`http://localhost:3333${image}`}
@@ -56,6 +59,10 @@ const ProductsCard = (
           </div>
         </div>        
       </div>
+        </Link>
+
+
+      
     );
   };
   
