@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { getAllProducts } from "../requests/products.js";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./index.module.scss";
@@ -21,7 +22,9 @@ export default function BannerSales() {
       <div className={s.header}>
         <h2 className={s.sale_title}>Sale</h2>
         <div className={s.line}></div>
-        <button className={s.allProductsButton}>All Sales</button>
+        <Link to="/sales">
+          <button className={s.allProductsButton}>All Sales</button>
+        </Link>        
       </div>
       <div className={s.Sales}>
         {discountedProducts.slice(0, 4).map((product) => (
