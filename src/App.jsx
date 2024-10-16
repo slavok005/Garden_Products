@@ -10,6 +10,7 @@ import "./index.css";
 import CartPage from "./pages/CartPage";
 import FavoritePage from "./pages/FavoritePage";
 import SingleProductPage from "./pages/SingleProductPage";
+import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 
 function App() {
   return (
@@ -19,11 +20,13 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/products" element={<AllProductsPage />} />
+          <Route path="/products/:id" element={<SingleProductPage/>} />
           <Route path="/sales" element={<AllSalesPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/categories/" element={<CategoriesPage />} />
+          <Route path='/categories/:id' element={<ProductsByCategoryPage />} /> 
           <Route path="/cart" element={<CartPage />} />
           <Route path="/favorites" element={<FavoritePage />} />
-          <Route path="/products/:id" element={<SingleProductPage />} />
+         
         </Route>
       </Routes>
     </div>

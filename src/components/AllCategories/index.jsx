@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories } from '../requests/categories';
+import { useDispatch, useSelector } from 'react-redux';
+import CategoriesItem from '../CategoriesItem/index';
 
 function AllCategories() {
   const dispatch = useDispatch();
@@ -19,10 +20,7 @@ function AllCategories() {
       </div>
       <div className={s.categoriesList}>
         {categoriesState.map((element) => (
-          <div key={element.id} className={s.categoryItem}>
-            <img src={`http://localhost:3333${element.image}`} alt={element.title} />
-            <p>{element.title}</p>
-          </div>
+            < CategoriesItem key={element.id} {...element} />
         ))}
       </div>
     </div>

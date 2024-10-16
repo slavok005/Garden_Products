@@ -1,0 +1,33 @@
+.categoryItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      display: flex;
+      width: 100%;
+      height: 350px;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    p {
+      color: var(--txt-black, #424436);
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%; /* 26px */
+    }
+  }
+
