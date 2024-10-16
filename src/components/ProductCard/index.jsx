@@ -43,7 +43,7 @@ const ProductsCard = (
         </div>
         <div className={s.price_box}>
           <div className={s.description}>
-            <p className={s.descriptionp}>{truncateDescription(title)}</p>
+            <p className={s.descriptionp}>{(title)}</p>
           </div>          
           <div className={s.price_container}>
             {/* Если есть скидочная цена, показываем ее и оригинальную цену */}

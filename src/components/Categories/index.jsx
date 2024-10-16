@@ -13,7 +13,7 @@ function Categories() {
      
   }, []);
 
- const partCategories = categories.slice(0, 4);
+const partCategories = categories.slice(0, 4);
   return (
     <div className={s.categories}>
       <div className={s.header}>
@@ -23,14 +23,14 @@ function Categories() {
           <Link to="/categories">All Categories</Link>
         </button>
       </div>
-      <div className={s.categoriesList}>
-        {partCategories.map((element) => (
-          <div key={element.id} className={s.categoryItem}>
-            <img src={`http://localhost:3333${element.image}`} alt={element.title} />
-            <p>{element.title}</p>
-          </div>
-        ))}
-      </div>
+        <div className={s.categoriesList}>
+          {partCategories.map((element) => (
+            <div key={element.id} className={s.categoryItem}>
+              <img src={`http://localhost:3333${element.image}`} alt={element.title} />
+              <p>{element.title}</p>
+            </div>
+          ))}
+        </div>     
     </div>
   );
 }

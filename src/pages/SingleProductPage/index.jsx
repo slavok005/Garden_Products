@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getSingleProduct } from '../../components/requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import s from "./index.module.scss";
+import SingleProductCard from '../../components/SingleProductCard';
+import NavigationBranch from '../../components/NavigationBranch';
 
 export default function SingleProductPage() {
   const { id } = useParams(); // Получаем ID продукта из URL
@@ -13,15 +15,11 @@ export default function SingleProductPage() {
 
   // Получаем состояние продукта из хранилища Redux
   const singleProductState = useSelector((store) => store.singleProduct);
-    console.log(singleProductState);
-    
 
   return (
     <div>
-      <h2>
-      {singleProductState && singleProductState.title}
-        SingleProductPage
-      </h2>
+      <NavigationBranch />
+      <SingleProductCard />
 
     </div>
     // <div className={s.container_single_card}>
