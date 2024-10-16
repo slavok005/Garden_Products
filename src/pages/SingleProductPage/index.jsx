@@ -20,7 +20,7 @@ export default function SingleProductPage() {
     <div>
       <h2>
       {singleProductState && singleProductState.title}
-        SingleProductPage
+      
       </h2>
 
     </div>
