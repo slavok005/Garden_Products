@@ -3,6 +3,7 @@
 }
 
 .navigationbutton {
+    gap: 10px;
     width: 120px;
     height: 37px;
     text-decoration: none;
@@ -52,4 +53,8 @@
     height: 1px;
     background: #ddd;
     // margin-left: 20px;
+}
+
+.navigation {
+    display: flex;
 }

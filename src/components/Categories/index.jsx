@@ -16,7 +16,8 @@ function Categories() {
 
  const partCategories = categoriesState.slice(0, 4);
 
- 
+const partCategories = categories.slice(0, 4);
+
   return (
     
     <div className={s.categories}>
@@ -34,12 +35,21 @@ function Categories() {
           
           < CategoriesItem key={element.id} {...element} />
             
-         
-          
+                   
         ))}
 
       </div>
    
+
+        <div className={s.categoriesList}>
+          {partCategories.map((element) => (
+            <div key={element.id} className={s.categoryItem}>
+              <img src={`http://localhost:3333${element.image}`} alt={element.title} />
+              <p>{element.title}</p>
+            </div>
+          ))}
+        </div>     
+
     </div>
   
   );
