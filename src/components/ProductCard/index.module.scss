@@ -13,13 +13,6 @@
   background: #FFF;
 }
 
-// p {
-//   display: flex;
-//   text-overflow: ellipsis;
-//   overflow-wrap: break-word;
-//   hyphens: auto;
-// }
-
 .image_container {
   overflow: hidden;
   object-fit: cover;
@@ -51,6 +44,9 @@
   position: absolute; /* Абсолютное позиционирование для логотипа со скидкой */
   top: 10px; /* Расположение от верхнего края карточки */
   left: 10px; /* Расположение от левого края карточки */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .icon_container {
@@ -75,27 +71,33 @@
 }
 
 .description {
-  width: 252px;
+  // width: 252px;
   height: 26px;
   margin-bottom: 10px;
   padding-left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .descriptionp {
   display: flex;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
   hyphens: auto;
-  width: 260px;
+  width: 252px;
   height: 26px;
   color: var(--txt-black, #424436);
   font-weight: 500;
   line-height: 130%; /* 26px */
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .descriptionp p{
-  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .price_box {

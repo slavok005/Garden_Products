@@ -10,6 +10,7 @@ const NavigationBranch = () => {
         sales: 'All Sales',
         categories: "Categories",
         favorites: "Liked products"
+        // [products/:id] : 'title'
       };
   
     return (
@@ -19,16 +20,17 @@ const NavigationBranch = () => {
           <button className={s.mainpagebutton}>
             <Link to="/" className='mainpagebutton'>Main Page</Link>
           </button>
-
-          <div className={s.line}></div>
-
+          
           {pathnames.map((segment, index) => {
             const pathTo = `/${pathnames.slice(0, index + 1).join('/')}`; // Создаём путь для каждого сегмента
             const displayName = pathNamesMap[segment] || segment;
             return (
-              <button className={s.navigationbutton} key={pathTo}>
+              <div className={s.navigation}>
+                <div className={s.line}></div> 
+                <button className={s.navigationbutton} key={pathTo}>
                 <Link to={pathTo}>{displayName}</Link>
-              </button>
+                </button>                               
+              </div>
             );
           })}
         </div>

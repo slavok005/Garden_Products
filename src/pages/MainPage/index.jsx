@@ -13,7 +13,6 @@ const MainPage = () => {
           {/* <NavigationBranch /> */}
           <Banner />
           <Categories />
-          <SingleProductCard/>
           <DiscountForm/>
           <BannerSales/>
     </div>

@@ -1,39 +1,59 @@
 
-
 .singleProductContainer{
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1360px;
     height: 578px;
     display: flex;
     gap: 32px;
+    // text-align: center;
 }
 
 .img_container {
+    object-fit: cover;
+    position: relative;
     width: 780px;
     height: 572px;
+}
+
+.product_image {
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    width: 780px;
+    height: 572px;
+    object-fit: cover;
+    border: 5px;
+    background-color: #FFFFFF;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider,#DDDDDD);
 }
 
 .content_container {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
 }
 
 .title_container {
+
     display: flex;
     justify-content: space-between;
     width: 548px;
+    height: 48px;
 }
 
 .title{
     color: var(--txt-black, #424436);
-    font-family: Montserrat;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: 110%; /* 44px */
     letter-spacing: 1.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .price_container {
@@ -56,7 +76,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 52px */
-    text-decoration-line: strikethrough;
+    text-decoration-line: line-through;
     margin: 20px 32px 24px;
 }
 
@@ -155,4 +175,31 @@ h3 {
     font-weight: 400;
     line-height: 130%; /* 20.8px */
     flex-wrap: nowrap;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.full-image {
+    width: 100%;
+    height: auto;
+}
+
+.modal-content img {
+    border-radius: 8px; /* Пример добавления стиля для изображения */
 }
