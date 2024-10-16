@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import s from './index.module.scss';
-import { getAllCategories } from '../requests/categories';
-import { useDispatch, useSelector } from 'react-redux';
-import CategoriesItem from '../CategoriesItem/index';
+import React, { useState, useEffect } from "react";
+import s from "./index.module.scss";
+import { getAllCategories } from "../requests/categories";
+import { useDispatch, useSelector } from "react-redux";
+import CategoriesItem from "../CategoriesItem/index";
 
 function AllCategories() {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ function AllCategories() {
   }, []);
 
   const categoriesState = useSelector((store) => store.categories);
-   
+
   return (
     <div className={s.categories}>
       <div className={s.header}>
@@ -20,7 +20,7 @@ function AllCategories() {
       </div>
       <div className={s.categoriesList}>
         {categoriesState.map((element) => (
-            < CategoriesItem key={element.id} {...element} />
+          <CategoriesItem key={element.id} {...element} />
         ))}
       </div>
     </div>
