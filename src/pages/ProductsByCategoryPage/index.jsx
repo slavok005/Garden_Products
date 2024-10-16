@@ -35,5 +35,4 @@ function ProductsByCategoryPage() {
   );
 }
 
-
 export default ProductsByCategoryPage;
