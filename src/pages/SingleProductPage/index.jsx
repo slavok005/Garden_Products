@@ -26,15 +26,6 @@ export default function SingleProductPage() {
 
 
     </div>
-    // <div className={s.container_single_card}>
-    //   <div className={s.image_section}>
-    //     <img
-    //     src={`http://localhost:3333/prodicts${image}`}// Используем изображение продукта
-    //       alt={title} // Используем название продукта для alt
-    //       className={s.image}
-    //     />
-    //   </div>
-    
-    // </div>
+   
   );
 }

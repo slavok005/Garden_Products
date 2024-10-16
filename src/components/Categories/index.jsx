@@ -31,6 +31,8 @@ function Categories() {
           <CategoriesItem key={element.id} {...element} />
         ))}
       </div>
+            ))}
+      </div>
       <div className={s.categoriesList}>
         {partCategories.map((element) => (
           <div key={element.id} className={s.categoryItem}>
