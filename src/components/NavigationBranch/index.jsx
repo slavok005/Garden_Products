@@ -22,7 +22,7 @@ const NavigationBranch = () => {
   return (
     <div>
       <div className={s.navigation_branch}>
-       
+      
         <button className={s.mainpagebutton}>
           <Link to="/" className="mainpagebutton">
             Main Page

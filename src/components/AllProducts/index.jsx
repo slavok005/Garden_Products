@@ -12,9 +12,9 @@ function AllProducts() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-         dispatch(getAllProducts);
+        dispatch(getAllProducts);
     }, []);
-   
+
     const productsState = useSelector((store) => store.products);
     const [showDiscounted, setShowDiscounted] = useState(false);
     const [minPrice, setMinPrice] = useState('');
