@@ -18,9 +18,6 @@ export default function SingleProductPage() {
 
   return (
     <div>
-      <h2>
-      {singleProductState && singleProductState.title}
-      </h2>
       <NavigationBranch />
       <SingleProductCard />
 

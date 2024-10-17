@@ -48,10 +48,10 @@ const SingleProductCard = () => {
 
                     {isModalOpen && (
                         <div className={s.modal} onClick={closeModal}>
-                            <div className={s.modal-content}>
+                            <div className={s.modal_content}>
                                 <img
                                     src={`http://localhost:3333${image}`}
-                                    className={s.full-image}
+                                    className={s.full_image}
                                 />
                             </div>
                         </div>
