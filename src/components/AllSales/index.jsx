@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
-import heart from '/public/heart.svg';
-import bag from '/public/bag.svg';
 import SortByPrice from '../SortBy/Price';
 import SortByOption from '../SortBy/Option';
 import { useDispatch, useSelector } from 'react-redux';
