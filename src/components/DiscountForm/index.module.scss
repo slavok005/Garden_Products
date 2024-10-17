@@ -8,11 +8,12 @@
   margin-left: 40px;
   color: white;
   border-radius: var(--radius-big, 12px);
-  background: linear-gradient(80deg, #87933D -0.68%, #55610B 66.66%), linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+  background: linear-gradient(80deg, #87933d -0.68%, #55610b 66.66%),
+    linear-gradient(261deg, #0b710b 32.63%, #393 98.96%);
 }
 
 .discountSection h2 {
-  color: var(--txt-white, #FFF);
+  color: var(--txt-white, #fff);
   text-align: center;
   font-family: Montserrat;
   font-size: 64px;
@@ -41,11 +42,9 @@ a {
   flex-direction: column;
   gap: 15px;
   margin-top: 50px;
-  // height: 360px;
-  // width: 612px;
 }
 
-.discountForm input{
+.discountForm input {
   color: white;
 }
 
@@ -62,9 +61,14 @@ input {
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
+
+  &::placeholder {
+    color: #fff;
+    opacity: 1;
+  }
 }
 
-.discountbutton{
+.discountbutton {
   padding: 10px;
   color: #333;
   cursor: pointer;
@@ -72,7 +76,7 @@ input {
   width: 538px;
   height: 60px;
   border-radius: var(--radius-small, 6px);
-  background: var(--white, #FFFFF1);
+  background: var(--white, #fffff1);
   color: var(--txt-black, #424436);
   text-align: center;
   font-family: Montserrat;
