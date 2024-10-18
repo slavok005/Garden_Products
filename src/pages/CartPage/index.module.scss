@@ -1,0 +1,92 @@
+.cart {
+    display: grid;
+    gap: 40px;
+    max-width: 1440px;
+    margin-left: 40px;
+    margin-top: 20px;
+    // padding: 10px;
+    background: var(--white, #fffff1);
+    }
+    
+.cardheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .line {
+        display: flex;
+        flex-grow: 1;
+        height: 2px;
+        width: 400px;
+        height: 1px;
+        background: #ddd;
+        margin-left: 20px;
+    }    
+    
+    h2 {
+    font-size: 64px;
+    color: var(--txt-black, #424436);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 70.4px */
+    }
+
+        .backtostorebtn {
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            gap: 10px;
+            width: 165px;
+            height: 40px;
+            text-decoration: none;
+            color: black;
+            margin: 8px 13px;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            border-radius: 5px;
+            border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
+            &:hover a{
+                color: black;
+            }
+            a{
+                color: gray;
+            }
+        }
+}
+
+.cardempty {
+    display:grid;
+    gap: 30px;
+    .continuebtn {
+        width: 313px;
+        height: 58px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #fff;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 6px;
+        border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
+        background: #92A134;  
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        &:hover {
+        border: 2px solid var(--grey-divider, black);
+        }
+    }
+
+}
+
+.cartitemscontainer {
+    display: grid;
+    width: 1360px;
+    gap: 32px;
+}
+
+.cartitems {
+    width: 780px;
+}

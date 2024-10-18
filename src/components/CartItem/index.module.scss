@@ -1,0 +1,120 @@
+.cartitem {
+    margin-bottom: 20px;
+    display: flex;
+    width: 780px;
+    height: 180px;
+    gap: 32px;
+    border-radius: var(--radius-big, 1px);
+    border: 1px solid var(--grey-divider, #DDD);
+    overflow: hidden;
+    .cartimgcontainer {
+        object-fit: cover;
+        // overflow: hidden;
+        border-radius: var(--radius-big, 1px);
+        border: 1px solid var(--grey-divider, #DDD);
+        width: 200px;
+        // height: 180px;
+    }   
+}
+.cartcontentcontainer{
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    display: grid;
+    width: 548px;
+    height: 180px;
+    justify-content: space-between;
+} 
+
+.hcart {
+    // display: grid;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-flex;
+    width: 516px;
+    height: 26px;
+    gap: 16px;
+}
+.hcartt {
+    width: 476px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.hcart button {
+    font-weight: 800;
+    margin-left: auto;
+    border: none;
+    outline: none;
+}
+
+.hcart p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.pricecartcontainer {
+    width: 516px;
+    height: 58px;
+    display: flex;
+    gap: 32px;
+}
+
+.cartcontainercounter {
+    display: flex;
+    width: 200px;
+    height: 58px;
+    border-top: 1px;
+    border-bottom: 1px;
+    justify-content: space-between;
+}
+
+.cartcontainercounter button{
+    width: 58px;
+    height: 58px;
+    border-radius: var(--radius-small, 1px);
+    border: 1px solid var(--grey-divider, #DDD);
+}
+
+.countercontainer {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    // width: 8px;
+    // height: 26px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    width: 96px;
+    height: 58px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-radius: var(--radius-small, 1px);
+    border: 1px solid var(--grey-divider, #DDD);
+}
+
+.pricecontainer {
+    width: 284px;
+    height: 44px;
+    display: flex;
+    gap: 16px;
+}
+
+.containerprice{
+    width: 130px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+    color: #282828;
+}
+
+.discount_pricecontainer {
+    width: 51px;
+    height: 26px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #8B8B8B;
+}

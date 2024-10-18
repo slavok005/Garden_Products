@@ -25,8 +25,7 @@ function App() {
           <Route path="/categories/" element={<CategoriesPage />} />
           <Route path='/categories/:id' element={<ProductsByCategoryPage />} /> 
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/favorites" element={<FavoritePage />} />
-         
+          <Route path="/favorites" element={<FavoritePage />} /> 
         </Route>
       </Routes>
     </div>
