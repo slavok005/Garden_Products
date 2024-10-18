@@ -9,5 +9,5 @@ export const productsReducer = (state = [], action) => {
     return action.payload;
  
   }
-  return state
+  return state;
 }

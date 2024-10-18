@@ -5,7 +5,7 @@
   // padding-bottom: 30px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  // align-items: flex-start;
   gap: 28px;
   position: relative;
   border-radius: var(--radius-big, 12px);
@@ -16,14 +16,14 @@
 .image_container {
   overflow: hidden;
   object-fit: cover;
-  position: relative; /* Относительное позиционирование для контейнера изображения */
+  // position: relative;
   width: 316px; /* Ширина 100% для корректного отображения */
   height: 284px; /* Высота автоматически подстраивается */
 }
 
 .sale_image {
   align-items: center;
-  position: relative; /* Относительное позиционирование для контейнера изображения */
+  // position: relative;
   max-width: 316px; /* Полная ширина изображения */
   // max-height: 284px;
   // height: auto; /* Автоматическая высота для сохранения пропорций */
@@ -59,6 +59,7 @@
 }
 
 .icon {
+  // position: absolute;
   width: 48px;
   height: 48px;
   cursor: pointer;
@@ -72,12 +73,13 @@
 
 .description {
   // width: 252px;
+  position: relative;
   height: 26px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
   padding-left: 30px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
 }
 
 .descriptionp {
