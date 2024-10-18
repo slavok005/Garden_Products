@@ -42,10 +42,16 @@ export default function CartItem({
                         </button>                        
                     </div>
                     <div className={s.pricecontainer}>
-                        <p className={s.containerprice}>${ discont_price * count }</p>
-                        <p className={s.discount_pricecontainer}>{ price * count }$</p>
+                        {discont_price ? (
+                            <>
+                                <p className={s.containerprice}>${discont_price * count}</p>
+                                <p className={s.discount_pricecontainer}>${price * count}</p>
+                            </>
+                            ) : (
+                            // Если скидочной цены нет, просто показываем оригинальную цену
+                            <p className={s.containerprice}>${price * count}</p>
+                        )}
                     </div>
-                    
                 </div>
             </div>            
         </div>
