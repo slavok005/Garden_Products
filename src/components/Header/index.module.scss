@@ -34,10 +34,10 @@
   color: black;
   &:hover {
     color: #a5a5a5;
-}
+  }
 }
 
-.navList  {
+.navList {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -56,15 +56,36 @@
   color: black;
   &:hover {
     color: #a5a5a5;
-}
+  }
 }
 .icons {
   display: flex;
   align-items: center;
   gap: 30px;
 }
+.icons > a {
+  position: relative;
+}
 
+.icons > a span {
+  background-color: #92a134;
+  width: 23.833px;
+  height: 23.833px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  border-radius: 50%;
+  padding: 9px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 .style-center {
   color: var(--txt-black, #424436);
-
+}
+.icons > :hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease, border 0.3s ease;
 }
