@@ -16,9 +16,7 @@ const [count, setCount] = useState(1);
   const favoriteState = useSelector((store) => store.favorite);
 
   const favoriteCount = favoriteState.reduce(
-    (acc, elem) => acc + elem.count,
-    0
-  );
+    (acc, elem) => acc + elem.count,0);
 
   return (
     <header className={s.header}>
