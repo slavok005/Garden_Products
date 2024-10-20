@@ -15,6 +15,7 @@ export default function CartPage() {
     const totalCount = cartState.reduce((acc, elem) => acc + elem.count, 0);
 
     const totalPrice = +cartState.reduce((acc, elem) => acc + (elem.price * elem.count), 0).toFixed(2);
+console.log("34",cartState);
 
 return (
     <div className={s.cart}>
