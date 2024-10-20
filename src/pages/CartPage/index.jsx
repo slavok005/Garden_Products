@@ -55,10 +55,6 @@ export default function CartPage() {
                     </div>
                     : <div className={s.cartitemscontainer}>
                         <CartItemsContainer cart={cartState} />
-                        <button className={s.deleteButton} onClick={() => dispatch(deleteAllAction())}>
-                            Delete All
-                        </button>
-                        
                     </div>
                 }
                 {/* Форма для ввода данных */}
