@@ -14,7 +14,7 @@ const checkProduct = (state, payload) => {
     const target = state.find(el => el.id === payload.id);
 
     if(target) {
-        target.count++;
+        // target.count++;
         return [...state]
     } else {
         return [...state, {...payload, count: 1}]

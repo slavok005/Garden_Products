@@ -5,10 +5,12 @@ import img3 from "./image_header/tache.svg";
 import s from "./index.module.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function Header() {
   const cartState = useSelector((store) => store.cart);
 
+const [count, setCount] = useState(1); 
   const totalCount = cartState.reduce((acc, elem) => acc + elem.count, 0);
 
   const favoriteState = useSelector((store) => store.favorite);
