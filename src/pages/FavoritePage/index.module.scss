@@ -1,4 +1,9 @@
+// .favoritepage {
+//     display: grid;
+//     width: 1440px;
+// }
 .favorites {
+    // display: flex;
     max-width: 1440px;
     margin: 20px;
     padding: 10px;
@@ -76,4 +81,10 @@
         }
     }
 
+}
+
+.favoritesitemcontainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
