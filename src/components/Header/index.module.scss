@@ -89,3 +89,9 @@
   transform: scale(1.1);
   transition: transform 0.1s ease, border 0.3s ease;
 }
+.logo .mode:hover {
+  border-radius: 10px;
+  background-color: #7f8b26; /* Более тёмный оттенок зелёного при наведении */
+  transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
+}
