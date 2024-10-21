@@ -22,7 +22,7 @@ const [count, setCount] = useState(1);
     <header className={s.header}>
       <div className={s.logo}>
         <img className="logo" src={img} alt="logo" />
-        <img className="mode" src={img1} alt="mode" />
+        <img className={s.mode} src={img1} alt="mode" />
       </div>
 
       <nav className="style-centr">

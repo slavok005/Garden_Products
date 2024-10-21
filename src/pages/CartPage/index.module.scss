@@ -188,3 +188,8 @@
   transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
 }
+.backtostorebtn:hover {
+  background-color: #7f8b26; /* Более тёмный оттенок зелёного при наведении */
+  transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
+}
