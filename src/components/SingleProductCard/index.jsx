@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import s from "./index.module.scss";
 import heart from "../ProductCard/images/heart.svg";
-// import picture from './main.png'
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../requests/products";
@@ -14,21 +13,12 @@ import {
 import CartItem from "../CartItem";
 
 const SingleProductCard = () => {
-  const [count, setCount] = useState(1); // Начальное количество товаров по умолчанию - 1
+  const [count, setCount] = useState(1); 
   const favoriteState = useSelector((store) => store.favorite);
   const cartState = useSelector((store) => store.cart);
   const singleProductState = useSelector((store) => store.singleProduct);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-  const handleImageClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
 
   const dispatch = useDispatch();
   const { product_id } = useParams();
@@ -37,30 +27,45 @@ const SingleProductCard = () => {
     dispatch(getSingleProduct(product_id));
   }, [dispatch, product_id]);
 
-  const { id, title, price, discont_price, description, image } = singleProductState;
+  const { id, title, price, discont_price, description, image } =
+    singleProductState;
 
   const discountPercentage = discont_price
     ? Math.round(((price - discont_price) / price) * 100)
     : null;
 
   const handleAddToCart = () => {
-    // Находим, есть ли уже товар в корзине
+ 
     const existingCartItem = cartState.find((item) => item.id === id);
 
-    // Если товар уже есть в корзине, добавляем количество, иначе добавляем новый товар
     if (existingCartItem) {
-      dispatch(incrementCountAction(id, count )); // Обновляем количество в корзине
+      
+      for (let i = 0; i < count; i++) {
+        dispatch(incrementCountAction(id)); 
+      }
     } else {
-      dispatch(addProductToCartAction({
-        id,
-        image,
-        title,
-        price,
-        discont_price,
-        count,  // Передаем текущее количество
-      }));
+     
+      dispatch(
+        addProductToCartAction({
+          id,
+          image,
+          title,
+          price,
+          discont_price,
+          count
+        })
+      );
     }
-    setCount(1); // Сбрасываем количество товаров после добавления в корзину
+
+    setCount(1); 
+  };
+
+   const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -71,6 +76,7 @@ const SingleProductCard = () => {
             src={`http://localhost:3333${image}`}
             className={s.product_image}
             onClick={handleImageClick}
+            alt={title}
           />
         </div>
 
@@ -80,6 +86,7 @@ const SingleProductCard = () => {
               <img
                 src={`http://localhost:3333${image}`}
                 className={s.full_image}
+                alt={title}
               />
             </div>
           </div>
@@ -123,25 +130,24 @@ const SingleProductCard = () => {
         <div className={s.button_container}>
           <div className={s.quantity_container}>
             <button
-              onClick={() => setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1))} // Минимум 1 товар
+              onClick={() =>
+                setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1))
+              } // Минимум 1 товар
               className={s.plus_minus}
-            >
-              -
+            > -
             </button>
             <p className={s.number_container}>{count}</p>
 
             <button
-              onClick={() => setCount(count + 1)}
+              onClick={() => setCount((prevCount) => prevCount + 1)}
               className={s.plus_minus}
-            >
-              +
+            > +
             </button>
           </div>
           <button
             className={s.green_button}
-            onClick={handleAddToCart } // Обработка добавления в корзину
-          >
-            Add to cart
+            onClick={handleAddToCart} 
+          >Add to cart
           </button>
         </div>
 
@@ -156,4 +162,3 @@ const SingleProductCard = () => {
 };
 
 export default SingleProductCard;
-

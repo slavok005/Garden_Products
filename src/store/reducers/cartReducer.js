@@ -3,12 +3,18 @@ const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 const DECREMENT_COUNT = 'DECREMENT_COUNT';
 const INCREMENT_COUNT = 'INCREMENT_COUNT';
 const DELETE_ALL = 'DELETE_ALL';
+// const UPDATE_CART = 'UPDATE_CART';
+
+
 
 export const addProductToCartAction = product => ({ type: ADD_PRODUCT_TO_CART, payload: product });
 export const deleteProductFromCartAction = product_id => ({ type: DELETE_PRODUCT_FROM_CART, payload: product_id });
 export const decrementCountAction = product_id => ({ type: DECREMENT_COUNT, payload: product_id });
 export const incrementCountAction = product_id => ({ type: INCREMENT_COUNT, payload: product_id });
 export const deleteAllAction = () => ({ type: DELETE_ALL });
+
+// const checkProductSingle = (state, payload) => {
+//     const target = state.find(el => el.id === payload.id);
 
 const checkProduct = (state, payload) => {
     const target = state.find(el => el.id === payload.id);
