@@ -191,11 +191,14 @@ h3 {
 .modal_content {
   width: 900px;
   height: 610px;
+ 
 }
 
 .full_image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .modal_content img {
