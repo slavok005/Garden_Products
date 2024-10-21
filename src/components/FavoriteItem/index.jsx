@@ -16,11 +16,6 @@ export default function FavoriteItem({ id, title, price, image, discont_price })
     const discountPercentage = discont_price
       ? Math.round(((price - discont_price) / price) * 100)
         : null;
-    
-    const handleAddToCartAndRemoveFromFavorite = () => {
-        dispatch(addProductToCartAction({ id, image, title, price, discont_price }));
-        dispatch(deleteProductFromFavoriteAction(id));
-    };
 
     return(
         <div className={s.product_card_container}>
@@ -30,7 +25,7 @@ export default function FavoriteItem({ id, title, price, image, discont_price })
             onClick={() => dispatch(deleteProductFromFavoriteAction(id))}
             />
             <img src={bag} className={s.icon} alt="Bag Icon" 
-            onClick={handleAddToCartAndRemoveFromFavorite}
+            onClick={() => dispatch(addProductToCartAction({ id, image, title, price, discont_price }))}
             />
         </div>
             <Link to = {`/products/${id}`} >
