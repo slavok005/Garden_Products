@@ -20,6 +20,7 @@ export default function FavoriteItem({ id, title, price, image, discont_price })
     const handleAddToCartAndRemoveFromFavorite = () => {
         dispatch(addProductToCartAction({ id, image, title, price, discont_price }));
         dispatch(deleteProductFromFavoriteAction(id));
+        
     };
 
     return(
