@@ -16,7 +16,6 @@ const NavigationBranch = () => {
     sales: "All Sales",
     categories: "Categories",
     favorites: "Liked products",
-    // [products/:id] : 'title'
   };
 
   return (

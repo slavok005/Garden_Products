@@ -8,11 +8,13 @@ const SortByDiscount = ({ showDiscounted, onCheckboxChange  }) => {
             <b>Discounted items</b>
             <div className={s.checkbox}>
                 <input 
-                type="checkbox" 
+                type="checkbox"
+                class='checkbox'
+                id='checkbox'
                 checked={showDiscounted} 
                 onChange={onCheckboxChange}
-                // style={{ display: 'none' }}
                 />
+                {/* <label for="checkbox">discount</label> */}
             </div>
             
         </div>
