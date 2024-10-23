@@ -41,6 +41,7 @@ const ProductsCard = ({ id, title, image, price, discont_price }) => {
       dispatch(addProductToFavoriteAction({ id, image, title, price, discont_price })); // Если товара нет в избранном, добавляем его
     }
   };
+console.log(favorites);
 
   return (
     <div key={id} className={s.sales_card}>
