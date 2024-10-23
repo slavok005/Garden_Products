@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 10px; /* Отступы для контейнера */
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+}
+.crumbBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #fffff1;
+  border: 1px solid #ddd;
+
+  margin-top: 0; /* Убираем верхний отступ */
+}
+
+
+.crumbText,
+.crumbTextBlack {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 126%;
+  margin: 0; /* Убираем лишние отступы */
+}
+
+.crumbText {
+  color: var(--txt-grey, #8b8b8b);
+}
+
+.crumbTextBlack {
+  color: black;
+}
+
+.line {
+  width: 16px;
+  height: 1px;
+  background-color: #ddd;
+  /* Промежуток после разделителя */
+}

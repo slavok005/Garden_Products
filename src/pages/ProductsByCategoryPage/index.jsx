@@ -22,6 +22,8 @@ function ProductsByCategoryPage() {
 
   const productsData = productsByCategoryState.data;
   const productsCategory = productsByCategoryState.category;
+  console.log(productsCategory);
+  
 
   return (
     <div>
