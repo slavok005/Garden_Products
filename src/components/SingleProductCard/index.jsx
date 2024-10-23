@@ -35,7 +35,7 @@ const SingleProductCard = () => {
     : null;
 
   const handleAddToCart = () => {
- 
+
     const existingCartItem = cartState.find((item) => item.id === id);
 
     if (existingCartItem) {
@@ -44,7 +44,6 @@ const SingleProductCard = () => {
         dispatch(incrementCountAction(id)); 
       }
     } else {
-     
       dispatch(
         addProductToCartAction({
           id,
@@ -60,7 +59,7 @@ const SingleProductCard = () => {
     setCount(1); 
   };
 
-   const handleImageClick = () => {
+  const handleImageClick = () => {
     setIsModalOpen(true);
   };
 

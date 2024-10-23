@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState , useDispatch, useEffect } from 'react';
 import s from './index.module.scss';
+import { getDiscountProductsAction } from '../../../store/reducers/productsReducers';
+import { getAllProducts } from '../../requests/products';
 
-const SortByDiscount = ({ showDiscounted, onCheckboxChange  }) => {
+const SortByDiscount = () => {
+
+    const dispatch = useDispatch();
+
+    const [ checked, setChecked ] = useState(false);
+    const handleCheck = () => setChecked(!checked)
+    const handleClick = e => dispatch(getDiscountProductsAction(e.target.checked))
+
+    useEffect(() => dispatch(getAllProducts), []);
+
+    // const allProductsState = useSelector(store => store.allProducts);
     
     return (
         <div className={s.sortedbydiscount}>
@@ -11,8 +23,9 @@ const SortByDiscount = ({ showDiscounted, onCheckboxChange  }) => {
                 type="checkbox"
                 class='checkbox'
                 id='checkbox'
-                checked={showDiscounted} 
-                onChange={onCheckboxChange}
+                checked={checked} 
+                onChange={handleCheck}
+                onClick={handleClick}
                 />
                 {/* <label for="checkbox">discount</label> */}
             </div>
