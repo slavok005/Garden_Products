@@ -52,7 +52,7 @@ function AllSales() {
         <div className={s.products}>
             <h2>Discount Items</h2>
             <div className={s.sortedby}>
-                <SortByPrice
+                {/* <SortByPrice
                     minPrice={minPrice} 
                     maxPrice={maxPrice} 
                     onMinPriceChange={(e) => setMinPrice(e.target.value)} 
@@ -61,7 +61,7 @@ function AllSales() {
                 <SortByOption
                     sortOption={sortOption} 
                     onSortChange={(e) => setSortOption(e.target.value)}                 
-                />
+                /> */}
             </div>
             <div className={s.productsList}>
                 {sortedProducts.map((element) => (
