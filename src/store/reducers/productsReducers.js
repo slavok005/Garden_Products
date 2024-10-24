@@ -11,7 +11,7 @@ export const sortAllProductsAction = option_value => ({
   type: SORT_ALL_PRODUCTS,
   payload: option_value
 });
-export const sortByPriceAction = option_value => ({
+export const sortByPriceAction = values => ({
   type: SORT_BY_PRICE,
   payload: values
 });
@@ -33,8 +33,11 @@ export const productsReducer = (state = [], action) => {
   } else if(action.type === GET_DISCOUNT_PRODUCTS){
     if(action.payload){
       state.map(el => {
-        if(el.discont_price = true){
+        if(el.discont_price){
           el.visible = false
+        }
+        else if(el.discont_price){
+          el.visible = true
         }
         return el
       })
