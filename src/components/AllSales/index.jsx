@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import s from './index.module.scss';
 
-import SortByPrice from '../SortBy/Price';
-import SortByOption from '../SortBy/Option';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../requests/products';
 import ProductsCard from '../ProductCard';
