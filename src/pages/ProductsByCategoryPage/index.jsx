@@ -1,47 +1,66 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./index.module.scss";
 import { getProductsByCategory } from "../../components/requests/products.js";
 import ProductsCard from "../../components/ProductCard/index.jsx";
-import NavigationBranch from "../../components/NavigationBranch/index.jsx";
 
 function ProductsByCategoryPage() {
   const { id } = useParams();
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getProductsByCategory(id));
-  }, []);
+    if (id) {
+      dispatch(getProductsByCategory(id));
+    }
+  }, [dispatch, id]);
 
   const productsByCategoryState = useSelector(
-    (store) => store.productsByCategory
+    (store) => store.productsByCategory || {}
   );
 
-  // const partCategories = productsByCategoryState.;
-
-  const productsData = productsByCategoryState.data;
-  const productsCategory = productsByCategoryState.category;
-  console.log(productsCategory);
-  
+  const productsData = productsByCategoryState.data || [];
+  const productsCategory = productsByCategoryState.category || {};
 
   return (
-    <div>
-      <NavigationBranch />
-          <div className={s.ProductsByCategoryPage}>
-            {productsCategory && productsCategory.title ? (
-              <div className={s.productsList}>
-                {productsData.map((element) => (
-                  <ProductsCard key={element.id} {...element} />
-                ))}
-              </div>
-            ) : (
-              <p>Loading...</p>
-            )}
+    <section>
+      {productsCategory && productsCategory.title ? (
+        <>
+          <div className={s.breadcrumbs}>
+            <div className={s.crumbBox}>
+              <Link to="/" className={s.crumbText}>
+                Main page
+              </Link>
+            </div>
+            <div className={s.line}></div>
+            <div className={s.crumbBox}>
+              <Link to="/categories/" className={s.crumbText}>
+                Categories
+              </Link>
+            </div>
+            <div className={s.line}></div>
+            <div className={s.crumbBox}>
+              <div className={s.crumbTextBlack}>{productsCategory.title}</div>
+            </div>
           </div>
-    </div>    
+
+          <div className={s.ProductsByCategoryPage}>
+            <div className={s.productsList}>
+              {productsData.length > 0 ? (
+                productsData.map((element) => (
+                  <ProductsCard key={element.id} {...element} />
+                ))
+              ) : (
+                <p>No products found</p>
+              )}
+            </div>
+          </div>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </section>
   );
 }
-
 
 export default ProductsByCategoryPage;

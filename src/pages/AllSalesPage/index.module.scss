@@ -1,0 +1,41 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.crumbBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #fffff1;
+  border: 1px solid #ddd;
+}
+
+.crumbText {
+  color: var(--txt-grey, #8b8b8b);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+}
+
+.crumbTextBlack {
+  color: black;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+}
+
+.line {
+  width: 16px;
+  height: 1px;
+  background-color: #ddd;
+}
