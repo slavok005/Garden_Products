@@ -14,21 +14,11 @@ const AllProductsPage = () => {
           </Link>
         </div>
         <div className={s.line}></div>
-<<<<<<< HEAD
-        <div className={s.crumbBox}>
-          <div className={s.crumbTextBlack}>
-            All products
-          </div>
-        </div>
-      </div>
-      <Products />
-=======
         <Link className={s.crumbBox} to="/products">
           <span className={s.crumbTextBlack}>All products</span>
         </Link>
       </div>      
       <Products/>
->>>>>>> 79cd8526c1b64975dcef4da1819496cf0d41e62b
     </div>
   );
 };
