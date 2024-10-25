@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  width: 100%; /* Занимает всю ширину родителя */
+  width: 100%;
 
   .line {
     display: flex;
@@ -30,18 +30,14 @@
   }
 
   .backtostorebtn {
+    display: flex;
     padding: 8px 16px;
-    width: 165px;
-    text-decoration: none;
-    color: black;
-    margin: 8px 13px;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 5px;
-    border: 0.3px solid var(--grey-divider, rgb(214, 212, 212));
-
+    justify-content: center;
+    align-items: center;
+    margin-right: 58px;
+    gap: 10px;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #ddd);
     &:hover {
       a {
         color: black;
@@ -77,14 +73,14 @@
 }
 
 .cartContent {
-  display: flex; /* Используем flex для выравнивания */
-  justify-content: space-between; /* Распределяем элементы по ширине */
+  display: flex;
+  justify-content: space-between;
   gap: 30px;
-  width: 100%; /* Занимает всю ширину родителя */
+  width: 100%;
 }
 
 .cartitemscontainer {
-  flex: 1; /* Позволяем этому контейнеру занимать оставшееся место */
+  flex: 1;
 }
 
 .orderForm {
@@ -146,52 +142,51 @@
   font-weight: 500;
   line-height: 130%; /* 52px */
 }
-.orderForm .total{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    align-self: stretch;
-    color: var(--txt-grey, #8B8B8B);
-    font-family: Montserrat;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%; /* 52px */
+.orderForm .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-self: stretch;
+  color: var(--txt-grey, #8b8b8b);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 52px */
 }
 
-.orderForm .total .price{
-    color: var(--txt-black, #424436);
-    font-family: Montserrat;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 110%; /* 70.4px */  
-        margin-right: 10px;
+.orderForm .total .price {
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-right: 10px;
 }
-.orderForm .order_details{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    align-self: stretch;
-    color: var(--txt-black, #424436);
-    font-family: Montserrat;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 110%; /* 44px */ 
-    margin-left: 10px;
+.orderForm .order_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-self: stretch;
+  color: var(--txt-black, #424436);
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-left: 10px;
 }
-
 
 .submitButton:hover {
-  background-color: #7f8b26; /* Более тёмный оттенок зелёного при наведении */
-  transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
+  background-color: #bdce43;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .backtostorebtn:hover {
-  background-color: #7f8b26; /* Более тёмный оттенок зелёного при наведении */
-  transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
+  background-color: #92a134;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .modalOverlay {
@@ -211,13 +206,13 @@
   display: flex;
   padding: 32px;
   gap: 16px;
-  background-color:#7f8b26;
+  background-color: #7f8b26;
   width: 548px;
   height: 236px;
   border-radius: var(--radius-big, 6px);
 }
 
-.modal_content h2{
+.modal_content h2 {
   color: white;
   font-weight: 600;
   font-size: 40px;
@@ -225,7 +220,7 @@
   gap: 16px;
 }
 
-.modal_content p{
+.modal_content p {
   display: grid;
   color: white;
   font-weight: 600;
@@ -248,7 +243,7 @@
   height: 44px;
 }
 
-.modal_content button{
+.modal_content button {
   display: flex;
   color: white;
   background-color: unset;

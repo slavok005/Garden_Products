@@ -124,11 +124,9 @@ export default function CartPage() {
                             required
                         />
                     </div>
-                    <button 
-                    type="submit" 
-                    className={s.submitButton}
-                    >
+                    <button type="submit"className={s.submitButton}>
                         Submit
+                        </button>
                     <button type="submit" className={s.submitButton}>
                         Order
                     </button>

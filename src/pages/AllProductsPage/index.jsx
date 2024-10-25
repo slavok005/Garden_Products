@@ -6,16 +6,18 @@ import { Link } from "react-router-dom";
 const AllProductsPage = () => {
   return (
     <div className={s.container}>
-      <div className={s.breadcrumbs}>
-        <Link className={s.crumbBox} to="/">
-          <div>
-            <span className={s.crumbText}>Main page</span>
-          </div>
-        </Link>
+       <div className={s.breadcrumbs}>
+        <div className={s.crumbBox}>
+          <Link to="/" className={s.crumbText}>
+            Main page
+          </Link>
+        </div>
         <div className={s.line}></div>
-        <Link className={s.crumbBox} to="/products">
-          <span className={s.crumbTextBlack}>All products</span>
-        </Link>
+        <div className={s.crumbBox}>
+          <div className={s.crumbTextBlack}>
+            All products
+          </div>
+        </div>
       </div>
       <Products />
     </div>
