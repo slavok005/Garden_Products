@@ -5,22 +5,11 @@
     margin-right: auto;
 }
 
-/* h2 {
-    text-overflow: inherit;
-    text-overflow: initial;
-    text-overflow: revert;
-    text-overflow: revert-layer;
-    text-overflow: unset;
-} */
-
 a {
     text-decoration: none;
 
-    /* margin-left: auto;
-    margin-right: auto; */
-
 }
 
-*{
+* {
     font-family: "Montserrat", sans-serif;
 }
