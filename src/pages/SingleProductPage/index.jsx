@@ -9,12 +9,12 @@ import s from "./index.module.scss";
 import SingleProductCard from "../../components/SingleProductCard";
 
 export default function SingleProductPage() {
-  const { product_id } = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSingleProduct(product_id));
-  }, [dispatch]);
+    dispatch(getSingleProduct(id));
+  }, [dispatch, id]);
 
   const singleProductState = useSelector((store) => store.singleProduct);
   const categoriesID = singleProductState?.categoryId;
