@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
@@ -11,16 +11,19 @@ import CartPage from "./pages/CartPage";
 import FavoritePage from "./pages/FavoritePage";
 import SingleProductPage from "./pages/SingleProductPage";
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
+import { ThemeContext, ThemeProvider } from "./ThemeContext";
 
 function App() {
+  // const {theme} = useContext(ThemeContext);
   return (
-    <div className="main_container">
-      <Routes>
-        <Route path="/" element={<Layout />}>
+    <ThemeProvider>
+      <div className="main_container">
+      <Routes>        
+        <Route path="/" element={<Layout/>}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/products" element={<AllProductsPage />} />
-          <Route path="/products/:id" element={<SingleProductPage />} />
+          <Route path="/products/:product_id" element={<SingleProductPage />} />
           <Route path="/sales" element={<AllSalesPage />} />
           <Route path="/categories/" element={<CategoriesPage />} />
           <Route path="/categories/:id" element={<ProductsByCategoryPage />} />
@@ -29,6 +32,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import s from "./index.module.scss";
 import { Link } from "react-router-dom";
 import CategoriesItem from "../CategoriesItem/index.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../requests/categories";
+import { ThemeContext } from "../../ThemeContext.jsx";
 
 function Categories() {
+  const {theme} = useContext(ThemeContext);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +24,7 @@ function Categories() {
       <div className={s.header}>
         <h2>Categories</h2>
         <div className={s.line}></div>
-        <button className={s.allCategoriesButton}>
+        <button className={`${s.allCategoriesButton} ${theme === 'dark' ? s['allCategoriesButton-dark'] : ''}`}>
           <Link to="/categories">All Categories</Link>
         </button>
       </div>

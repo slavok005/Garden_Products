@@ -10,7 +10,14 @@
   justify-content: space-between;
   padding: 10px 30px;
   border-bottom: 1px solid var(--grey-divider, #ddd);
-  background: var(--white, #fffff1);
+  background-color: var(--white, #fffff1);
+  
+}
+
+.header button {
+  border: none;
+  outline: none;
+  background-color: unset;
 }
 
 .logo {
@@ -89,12 +96,6 @@
   transform: scale(1.1);
   transition: transform 0.1s ease, border 0.3s ease;
 }
-.logo .mode:hover {
-  border-radius: 10px;
-  background-color: #7f8b26; /* Более тёмный оттенок зелёного при наведении */
-  transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
-}
 
 .modal {
   position: fixed;
@@ -107,6 +108,10 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+.modal_dark h2, p{
+  color: #424436!important;
 }
 
 .modal_content {
@@ -130,7 +135,7 @@
 }
 
 .modal_content p{
-  color: white;
+  // color: white;
   font-weight: 600;
   font-size: 40px;
   line-height: 44px;
@@ -238,6 +243,9 @@
 .modal_product_button_container {
   width: 484px;
   height: 58px;
+  border: 1px;
+  border-radius: 1px;
+  // background-color: white;
   :hover{
     border: 1px;
     border-color: black;
@@ -258,6 +266,8 @@
     padding-bottom: 16px;
     padding-left: 32px;
     gap: 10px;
+    background-color: white;
+
     p{
       width: 420px;
       height: 26px;
@@ -266,5 +276,14 @@
       line-height: 26px;
       align-self: center;
     }
+  }
+}
+
+.header-dark {
+  display: flex;
+  background: #424436!important;
+  // color: #ddd;
+  a {
+    color: white;
   }
 }

@@ -1,17 +1,14 @@
 .main_container {
-    max-width: 1440px;
-    background: var(--white, #FFFFF1);
+    display: grid;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* h2 {
-    text-overflow: inherit;
-    text-overflow: initial;
-    text-overflow: revert;
-    text-overflow: revert-layer;
-    text-overflow: unset;
-} */
+
+h2 {
+    color: var(--txt-black, #424436);
+}
 
 a {
     text-decoration: none;

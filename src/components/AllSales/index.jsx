@@ -9,11 +9,11 @@ import { sortAllProductsAction, sortByPriceAction } from '../../store/reducers/p
 function AllSales() {
     const dispatch = useDispatch();
 
-    const productsState = useSelector((store) => store.products);
+    const productsState = useSelector((store) => store.products.data);
     const [discountedProducts] = useState(true);
 
-    const [ minValue, setMinValue ] = useState(0);
-    const [ maxValue, setMaxValue ] = useState(Infinity);
+    const [ minValue, setMinValue ] = useState('');
+    const [ maxValue, setMaxValue ] = useState('');
 
     const handleMinValue = e => setMinValue(e.target.value || 0);
     const handleMaxValue = e => setMaxValue(e.target.value || Infinity);
