@@ -27,8 +27,10 @@ const SingleProductCard = () => {
     dispatch(getSingleProduct(product_id));
   }, [dispatch, product_id]);
 
-  const { id, title, price, discont_price, description, image } =
-    singleProductState;
+  const { id, title, price, discont_price, description, image } = singleProductState;
+
+  console.log(singleProductState);
+  
 
   const discountPercentage = discont_price
     ? Math.round(((price - discont_price) / price) * 100)

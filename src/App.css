@@ -13,7 +13,6 @@ body {
     font-size: 18px;
     font-style: normal;
 }
-
 ul,
 li,
 ol {
@@ -51,4 +50,3 @@ a {
     color: inherit;
     /* использует в элементе свойства родительского элемента*/
 }
-

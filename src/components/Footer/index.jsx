@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import s from "./index.module.scss";
 import GoogleMap from "../GoogleMap";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { ThemeContext } from "../../ThemeContext";
 const Footer = () => {
+  const {theme} = useContext(ThemeContext);
+
   return (
-    <div className={s.footer}>
+    <div className={`${s.footer} ${theme === 'dark' ? s['footer-dark'] : ''}`}>
       <h2 className={s.contact_title}>Contact</h2>
       <div className={s.contact_container}>
         <div className={s.contact_item}>

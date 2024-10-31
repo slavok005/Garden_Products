@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import s from "./index.module.scss";
 import bag from "./images/bag.svg";
 import heart from "./images/heart.svg";
@@ -8,8 +8,13 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCartAction, deleteProductFromCartAction } from "../../store/reducers/cartReducer";
 import { addProductToFavoriteAction, deleteProductFromFavoriteAction } from "../../store/reducers/favoriteReducer";
+import { ThemeContext } from "../../ThemeContext";
 
 const ProductsCard = ({ id, title, image, price, discont_price }) => {
+
+  const { theme } = useContext(ThemeContext);
+
+
   const dispatch = useDispatch();
 
   const discountPercentage = discont_price

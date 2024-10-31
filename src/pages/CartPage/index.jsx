@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import s from "./index.module.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,8 +6,8 @@ import CartItemsContainer from "../../components/CartItemContainer";
 import { deleteAllAction } from "../../store/reducers/cartReducer";
 
 export default function CartPage() {
-    const cartState = useSelector((store) => store.cart);
-    const dispatch = useDispatch();
+  const cartState = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
 
   const totalCount = cartState.reduce((acc, elem) => acc + elem.count, 0);
   const totalPrice = +cartState
@@ -57,6 +57,11 @@ export default function CartPage() {
     dispatch(deleteAllAction());
     setIsModalOpen(false);
   };
+
+  useEffect(
+    () => localStorage.setItem("cart", JSON.stringify(cartState)),
+    [cartState]
+  );
 
   return (
     <div className={s.cart}>

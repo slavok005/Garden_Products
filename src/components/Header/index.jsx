@@ -1,26 +1,28 @@
 import img from "./image_header/logo.svg";
 import img1 from "./image_header/mode.svg";
+import img6 from "./image_header/mode-dark.svg";
 import img2 from "./image_header/heart.svg";
+import img4 from "./image_header/heart-dark.svg";
 import img3 from "./image_header/tache.svg";
+import img5 from "./image_header/bag-dark.svg"
 import s from "./index.module.scss";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { addProductToCartAction } from "../../store/reducers/cartReducer"
 import { getSingleProduct } from "../requests/products";
+import { ThemeContext } from "../../ThemeContext";
 
 function Header() {
-  const productsState = useSelector((store) => store.products);
+  
+  const {theme, toggleTheme} = useContext(ThemeContext);
+
+  const productsState = useSelector((store) => store.products.data);
   const cartState = useSelector((store) => store.cart);
   const favoriteState = useSelector((store) => store.favorite);
   const singleProductState = useSelector((store) => store.singleProduct);
 
   const dispatch = useDispatch();
-  const { product_id } = useParams();
-
-  useEffect(() => {
-    dispatch(getSingleProduct(product_id));
-  }, [dispatch, product_id]);
 
   const { id, title, price, discont_price, description, image } =
     singleProductState;
@@ -54,12 +56,11 @@ function Header() {
     }
     setIsModalOpen(false);
   };
-
   return (
-    <header className={s.header}>
+    <header className={`${s.header} ${theme === 'dark' ? s['header-dark'] : ''}`}>
       <div className={s.logo}>
         <img className="logo" src={img} alt="logo" />
-        <img className={s.mode} src={img1} alt="mode" />
+        <button onClick={toggleTheme}><img className={s.mode} src={theme === 'dark' ? img6 : img1 }alt="mode"/></button>
       </div>
 
       <nav className="style-centr">
@@ -68,7 +69,7 @@ function Header() {
         </div>
 
         {isModalOpen && randomProduct && (
-          <div className={s.modal}>
+          <div className={`${s.modal} ${theme === 'dark' ? s['modal_dark'] : ''}`}>
             <div className={s.modal_content}>
               <div className={s.modal_title}>
                 <p>50% discount on product of the day!</p>
@@ -111,11 +112,11 @@ function Header() {
 
       <div className={s.icons}>
         <Link to="/favorites">
-          <img className="icon" src={img2} alt="icon" />
+          <img className="icon" src={theme === 'dark' ? img4 : img2} alt="favorite icon" />
           <span>{favoriteCount}</span>
         </Link>
         <Link to="/cart">
-          <img className="card" src={img3} alt="card" />
+          <img className="cart" src={theme === 'dark' ? img5 : img3} alt="cart icon" />
           <span>{totalCount}</span>
         </Link>
       </div>

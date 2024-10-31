@@ -9,7 +9,7 @@ export const getAllProducts = (dispatch) => {
     .then((json) => dispatch(loadAllProductsAction(json)))
     .catch((error) => console.error("Error fetching all products:", error));
 };
-export const getSingleProduct = (id) => {
+export const getSingleProduct = (id) => {  
   return dispatch => {
     fetch(`http://localhost:3333/products/${id}`)
     .then(res => res.json())

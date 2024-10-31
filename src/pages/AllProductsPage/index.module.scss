@@ -12,7 +12,7 @@
   align-items: center;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: #fffff1;
+  // background-color: #fffff1;
   border: 1px solid #ddd;
 }
 
@@ -25,13 +25,16 @@
   line-height: 126%;
 }
 
-.crumbTextBlack {
+.crumbTextMain {
   color: black;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 126%;
+}
+.crumbTextMain-dark {
+  color: #fff;
 }
 
 .line {
