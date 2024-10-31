@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import s from './index.module.scss';
 import { getAllProducts } from '../requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsCard from '../ProductCard';
 import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
+import { ThemeContext } from '../../ThemeContext';
 
 function AllProducts() {
+    const {theme} = useContext(ThemeContext);
     
     useEffect(() => dispatch(getAllProducts), []);
-    const allProductsState = useSelector(store => store.products);
+    const allProductsState = useSelector(store => store.products.data);
 
     const [ checked, setChecked ] = useState(false);
 
     const handleCheck = () => setChecked(!checked)
     const handleClick = e => dispatch(getDiscountProductsAction(e.target.checked))
 
-    const [ minValue, setMinValue ] = useState(0);
-    const [ maxValue, setMaxValue ] = useState(Infinity);    
+    const [ minValue, setMinValue ] = useState('');
+    const [ maxValue, setMaxValue ] = useState('');    
     const handleMinValue = e => setMinValue(e.target.value || 0);
     const handleMaxValue = e => setMaxValue(e.target.value || Infinity);    
     
@@ -50,11 +52,13 @@ function AllProducts() {
                             value={minValue} 
                             onChange={handleMinValue} 
                             placeholder='from'
+                            name='number'
                             />
                             <input type="number" 
                             value={maxValue} 
                             onChange={handleMaxValue} 
                             placeholder='to'
+                            name='number'
                             />
                             <button></button>
                         </div>

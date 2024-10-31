@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import s from "./index.module.scss";
 import { getAllCategories } from "../requests/categories";
 import { useDispatch, useSelector } from "react-redux";
 import CategoriesItem from "../CategoriesItem/index";
+import { ThemeContext } from "../../ThemeContext";
 
 function AllCategories() {
   const dispatch = useDispatch();

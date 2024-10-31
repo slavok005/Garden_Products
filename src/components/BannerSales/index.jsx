@@ -14,9 +14,10 @@ export default function BannerSales() {
 
   const productsState = useSelector((store) => store.products);
 
-  const discountedProducts = productsState.filter(
+  const discountedProducts = productsState.data.filter(
     (product) => product.discont_price
   );
+  
   return (
     <div className={s.sales_container}>
       <div className={s.header}>

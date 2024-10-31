@@ -10,10 +10,9 @@
   max-width: 1440px;
   margin: 20px;
   padding: 10px;
-  background: var(--white, #fffff1);
+  // background: var(--white, #fffff1);
 
   h2 {
-    color: var(--txt-black, #424436);
     font-family: Montserrat;
     font-size: 64px;
     font-style: normal;
@@ -149,6 +148,8 @@
 
 
 .sortedbyprice input{
+  background: #ffff;
+  color: #424436;
   padding: 10px;
   display: flex;
   height: 36px;
@@ -162,4 +163,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
+  &::placeholder {
+    color: #424436;
+  }
 }
