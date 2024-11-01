@@ -4,6 +4,13 @@
   gap: 20px;
 }
 
+.singleProductContainer_dark {
+  .crumbBox {
+    background-color: #424436!important;
+    color: #ffff!important;
+  }
+}
+
 .image_section {
   width: 100%;
   display: flex;
@@ -23,7 +30,7 @@
   align-items: center;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: #fffff1;
+  // background-color: #fffff1;
   border: 1px solid #ddd;
 }
 
@@ -49,4 +56,13 @@
   width: 16px;
   height: 1px;
   background-color: #ddd;
+}
+
+.single_prdouct_page_dark {
+  .crumbText {
+    color: #8b8b8b;
+  }
+  .crumbTextBlack {
+    color: #ffff;
+  }
 }

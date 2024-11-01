@@ -63,7 +63,7 @@
 }
 
 .allProductsButton a {
-  color: gray;
+  color: gray!important;
 }
 
 .Sales {
@@ -181,3 +181,12 @@
     transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
   }
+
+.allProductsButton_dark {
+  background-color: #424436;
+  color: gray;
+}
+
+.allProductsButton:hover {
+  color: #333;
+}

@@ -8,7 +8,7 @@ const CategoriesPage = () => {
   const {theme} = useContext(ThemeContext);
   
   return (
-    <div>
+    <div className={s.categories_page}>
     <div className={s.breadcrumbs}>
         <div className={s.crumbBox}>
           <Link to="/" className={s.crumbText}>

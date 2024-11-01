@@ -141,3 +141,16 @@
   // display: flexbox;
   transform: scale(1.01);
 }
+
+.sales_card_dark {
+  background: #383A2C;
+  .old_price {
+    color: #ffff!important;
+  }
+  .new_price {
+    color: #ffff!important;
+  }
+  .descriptionp {
+    color: #ffff!important;
+  }
+}
