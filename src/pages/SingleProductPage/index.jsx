@@ -46,13 +46,13 @@ export default function SingleProductPage() {
         <div className={s.line}></div>
         <div className={s.crumbBox}>
           <Link to={`/categories/${categoriesID}`} className={s.crumbText}>
-            {productsByCategoryState?.category?.title || "Loading..."}{" "}
+            {productsByCategoryState?.categoryTitle?.title}
           </Link>
         </div>
         <div className={s.line}></div>
         <div className={s.crumbBox}>
           <div className={s.crumbTextBlack}>
-            {singleProductState?.title || "Loading..."}
+            {singleProductState?.title}
           </div>
         </div>
       </div>
