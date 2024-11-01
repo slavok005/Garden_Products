@@ -11,13 +11,16 @@ import { ThemeContext } from "../../ThemeContext";
 
 export default function SingleProductPage() {
 
+
   const {theme} = useContext(ThemeContext);
   const { product_id } = useParams();
+
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSingleProduct(product_id));
-  }, [dispatch]);
+    dispatch(getSingleProduct(id));
+  }, [dispatch, id]);
 
   const singleProductState = useSelector((store) => store.singleProduct);
   const categoriesID = singleProductState?.categoryId;
@@ -51,13 +54,13 @@ export default function SingleProductPage() {
         <div className={s.line}></div>
         <div className={s.crumbBox}>
           <Link to={`/categories/${categoriesID}`} className={s.crumbText}>
-            {productsByCategoryState?.category?.title || "Loading..."}{" "}
+            {productsByCategoryState?.categoryTitle?.title}
           </Link>
         </div>
         <div className={s.line}></div>
         <div className={s.crumbBox}>
           <div className={s.crumbTextBlack}>
-            {singleProductState?.title || "Loading..."}
+            {singleProductState?.title}
           </div>
         </div>
       </div>
