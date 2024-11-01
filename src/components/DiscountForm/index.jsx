@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import s from "./index.module.scss";
 import img from "./image_discount/1.svg";
+import { Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function DiscountForm() {
   const [formData, setFormData] = useState({
@@ -63,8 +65,9 @@ function DiscountForm() {
                 required
               />
             </label>
-            
-            <button className={s.discountbutton}>Get a discount</button>
+            <Link to='/sales'>
+              <button className={s.discountbutton}>Get a discount</button>
+            </Link>            
           </form>
         </div>
     </div>

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import s from "./index.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import CartItemsContainer from "../../components/CartItemContainer";
 import { deleteAllAction } from "../../store/reducers/cartReducer";
+import { ThemeContext } from "../../ThemeContext";
 
 export default function CartPage() {
+  const { theme } = useContext(ThemeContext);
   const cartState = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
@@ -64,7 +66,9 @@ export default function CartPage() {
   );
 
   return (
-    <div className={s.cart}>
+    <div className=
+    {`${s.cart} ${theme === "dark" ? s["cart_dark"] : ""}`}
+    >
       <div className={s.cardheader}>
         <h2>Shopping Cart</h2>
         <div className={s.line}></div>
@@ -83,51 +87,51 @@ export default function CartPage() {
         ) : (
           <div className={s.cartitemscontainer}>
             <CartItemsContainer cart={cartState} />
+            <form onSubmit={handleSubmit} className={s.orderForm}>
+              <h3 className={s.order_details}>Order Details</h3>
+              <p className={s.items}> {totalCount} Items</p>
+              <p className={s.total}>
+                Total <p className={s.price}>${totalPrice}</p>{" "}
+              </p>
+              <div>
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="phone">Phone:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <button type="submit" className={s.submitButton}>
+                Order
+              </button>
+            </form>
           </div>
         )}
-        <form onSubmit={handleSubmit} className={s.orderForm}>
-          <h3 className={s.order_details}>Order Details</h3>
-          <p className={s.items}> {totalCount} Items</p>
-          <p className={s.total}>
-            Total <p className={s.price}>${totalPrice}</p>{" "}
-          </p>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phone">Phone:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <button type="submit" className={s.submitButton}>
-            Order
-          </button>
-        </form>
       </div>
 
       {isModalOpen && (

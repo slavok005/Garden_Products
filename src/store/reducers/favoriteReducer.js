@@ -31,8 +31,12 @@ const checkProduct = (state, payload) => {
     } else {
         return [...state, {...payload, count: 1}]
     }
-}
-export const favoriteReducer = (state=[], action) => {
+};
+
+const defaultState = JSON.parse(localStorage.getItem('favorite'))
+|| [];
+
+export const favoriteReducer = (state=defaultState  , action) => {
     if(action.type === ADD_PRODUCT_TO_FAVORITE){
         return checkProduct(state, action.payload)
     } else if (action.type === SORT_ALL_FAVORITE) 

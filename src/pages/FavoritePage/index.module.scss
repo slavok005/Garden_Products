@@ -1,6 +1,12 @@
-.favorites {
+.favoritepage {
   max-width: 1440px;
+  // margin: 20px;
+}
+
+.favorites {
   // display: flex;
+  margin: 20px;
+  padding: 10px;
 
   background: var(--white, #fffff1);
 }
@@ -173,6 +179,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
+  &::placeholder {
+    color: black;
+  }
 }
 
 .sortedbydiscount {
@@ -193,4 +202,36 @@
       width: 25px;
       height: 32px;
   }    
+}
+
+.favoritepage_dark {
+  background-color: #424436!important;
+  .favorites {
+    .favoritesempty p{
+      color: #fff!important;
+    }
+    .favheader h2{
+      color: #ffff!important;
+    }
+    background-color: #424436;
+  }
+  .sortedbyprice input{
+    color: #fff;
+    background-color: #ffff;
+    &::placeholder {
+      color: grey;
+    }
+  }
+  .breadcrumbs {
+    .crumbBox {
+      background-color: #424436;
+      .crumbText{
+        color: grey;
+      }
+      .crumbTextBlack {
+        color: #ffff;
+      }
+    }
+    
+  }
 }
