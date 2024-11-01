@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import s from "./index.module.scss";
 import heart from "../ProductCard/images/heart.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +11,10 @@ import {
   incrementCountAction,
 } from "../../store/reducers/cartReducer";
 import CartItem from "../CartItem";
+import { ThemeContext } from "../../ThemeContext";
 
 const SingleProductCard = () => {
+  const {theme} = useContext(ThemeContext);
   const [count, setCount] = useState(1); 
   const favoriteState = useSelector((store) => store.favorite);
   const cartState = useSelector((store) => store.cart);
@@ -27,10 +29,7 @@ const SingleProductCard = () => {
     dispatch(getSingleProduct(product_id));
   }, [dispatch, product_id]);
 
-  const { id, title, price, discont_price, description, image } = singleProductState;
-
-  console.log(singleProductState);
-  
+  const { id, title, price, discont_price, description, image } = singleProductState;  
 
   const discountPercentage = discont_price
     ? Math.round(((price - discont_price) / price) * 100)
@@ -70,7 +69,9 @@ const SingleProductCard = () => {
   };
 
   return (
-    <div className={s.singleProductContainer}>
+    <div className=
+    {`${s.singleProductContainer} ${theme === 'dark' ? s['singleProductContainer_dark'] : ''}`}
+    >
       <div>
         <div className={s.img_container}>
           <img

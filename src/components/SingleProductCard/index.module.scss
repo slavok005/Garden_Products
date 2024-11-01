@@ -8,6 +8,24 @@
   gap: 32px;
 }
 
+.singleProductContainer_dark {
+  border-color: #8b8b8b!important;
+  .new_price {
+    color: #ffff!important;
+  }
+  .old_price {
+    color: #ffff!important;
+  }
+  .plus_minus {
+    background-color: #424436!important;
+    color: #ffff!important;
+  }
+  .number_container {
+    background-color: #424436!important;
+    color: #ffff!important;
+  }
+}
+
 .img_container {
   object-fit: cover;
   position: relative;

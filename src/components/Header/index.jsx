@@ -34,25 +34,28 @@ function Header() {
   const totalCount = cartState.reduce((acc, elem) => acc + elem.count, 0);
   const favoriteCount = favoriteState.reduce((acc, elem) => acc + elem.count, 0);
 
+  
+
   const handleDiscountClick = () => {
     const randomIndex = Math.floor(Math.random() * productsState.length);
     const selectedProduct = productsState[randomIndex];
-
+    
     setRandomProduct({
       ...selectedProduct,
       discountedPrice: (selectedProduct.price * 0.5).toFixed(2)
     });
 
+  
+
     setIsModalOpen(true);
   };
-
   const closeDiscount = () => {
     setIsModalOpen(false);
   };
 
   const handleAddToCart = () => {
     if (randomProduct) {
-      dispatch(addProductToCartAction({ ...randomProduct, count: 1 }));
+      dispatch(addProductToCartAction({ ...randomProduct, price:randomProduct.price, discont_price:randomProduct.discountedPrice, count: 1 }));
     }
     setIsModalOpen(false);
   };

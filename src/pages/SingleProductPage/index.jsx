@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   getProductsByCategory,
@@ -7,8 +7,14 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import s from "./index.module.scss";
 import SingleProductCard from "../../components/SingleProductCard";
+import { ThemeContext } from "../../ThemeContext";
 
 export default function SingleProductPage() {
+
+
+  const {theme} = useContext(ThemeContext);
+  const { product_id } = useParams();
+
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -30,7 +36,9 @@ export default function SingleProductPage() {
   }, [dispatch, categoriesID]);
 
   return (
-    <div>
+    <div className=
+    {`${s.single_prdouct_page} ${theme === 'dark' ? s['single_prdouct_page_dark'] : ''}`}
+    >
       <div className={s.breadcrumbs}>
         <div className={s.crumbBox}>
           <Link to="/" className={s.crumbText}>

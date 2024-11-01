@@ -48,7 +48,10 @@ const ProductsCard = ({ id, title, image, price, discont_price }) => {
   };
 
   return (
-    <div key={id} className={s.sales_card}>
+    <div key={id} className=
+    // {s.sales_card}
+    {`${s.sales_card} ${theme === 'dark' ? s['sales_card_dark'] : ''}`}
+    >
       <div className={s.icon_container}>
         {/* Показ иконки сердца */}
         <img

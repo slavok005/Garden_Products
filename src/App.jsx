@@ -14,10 +14,10 @@ import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 import { ThemeContext, ThemeProvider } from "./ThemeContext";
 
 function App() {
-  // const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <ThemeProvider>
-      <div className="main_container">
+      <div className={`main_container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
       <Routes>        
         <Route path="/" element={<Layout/>}>
           <Route index element={<MainPage />} />
@@ -32,8 +32,13 @@ function App() {
         </Route>
       </Routes>
     </div>
-    </ThemeProvider>
   );
 }
 
-export default App;
+export default function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
