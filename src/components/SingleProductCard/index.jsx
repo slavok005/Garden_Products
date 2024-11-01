@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import s from "./index.module.scss";
-import heart from "../ProductCard/images/heart.svg";
+import heart_dark from './images/heart-dark.svg'
+import heart from "./images/heart.svg";
+import heartgreen from "./images/heart green.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../requests/products";
-import { addProductToFavoriteAction } from "../../store/reducers/favoriteReducer";
+import { addProductToFavoriteAction, deleteProductFromFavoriteAction } from "../../store/reducers/favoriteReducer";
 import {
   addProductToCartAction,
   decrementCountAction,
+  deleteProductFromCartAction,
   incrementCountAction,
 } from "../../store/reducers/cartReducer";
 import CartItem from "../CartItem";
@@ -68,6 +71,28 @@ const SingleProductCard = () => {
     setIsModalOpen(false);
   };
 
+  const favorites = useSelector((state) => state.favorite);
+  const isInFavorite = favorites.some((product) => product.id === id);
+
+  const handleFavoriteClick = () => {
+    if (isInFavorite) {
+      dispatch(deleteProductFromFavoriteAction(id)); // Если товар в избранном, удаляем его
+    } else {
+      dispatch(addProductToFavoriteAction({ id, image, title, price, discont_price })); // Если товара нет в избранном, добавляем его
+    }
+  };
+
+  const [setIsInFavorite] = useState(false);
+
+  const handleClick = () => {
+    setIsInFavorite(!isInFavorite); // Переключаем статус избранного
+  };
+
+  const iconSrc = theme === 'dark' 
+  ? (isInFavorite ? heartgreen : heart_dark) 
+  : (isInFavorite ? heartgreen : heart);
+
+
   return (
     <div className=
     {`${s.singleProductContainer} ${theme === 'dark' ? s['singleProductContainer_dark'] : ''}`}
@@ -99,19 +124,9 @@ const SingleProductCard = () => {
         <div className={s.title_container}>
           <h2 className={s.title}>{title}</h2>
           <img
-            src={heart}
-            alt="heart"
-            onClick={() =>
-              dispatch(
-                addProductToFavoriteAction({
-                  id,
-                  image,
-                  title,
-                  price,
-                  discont_price,
-                })
-              )
-            }
+            src={iconSrc}
+            // alt="heart"
+            onClick={handleFavoriteClick}
           />
         </div>
 

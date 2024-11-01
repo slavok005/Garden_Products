@@ -140,3 +140,18 @@
   font-weight: 600;
 }
 
+.product_card_container_dark {
+  .sales_card {
+    border: 1px solid var(--grey-divider, grey);
+    background-color: #383A2C!important;
+    .new_price {
+      color: #fff!important;
+    }
+    .old_price {
+      color: grey!important;
+    }
+    .descriptionp {
+      color: #ffff!important;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import bag from "./images/bag.svg";
 import heart from "./images/heart.svg";
 import { useDispatch } from 'react-redux';
@@ -6,10 +6,13 @@ import { deleteProductFromFavoriteAction } from '../../store/reducers/favoriteRe
 import { addProductToCartAction } from "../../store/reducers/cartReducer";
 import { Link } from "react-router-dom";
 import s from "./index.module.scss"
+import { ThemeContext } from '../../ThemeContext';
 
 
 
 export default function FavoriteItem({ id, title, price, image, discont_price }) {
+    
+    const {theme} = useContext(ThemeContext)
 
     const dispatch = useDispatch();
 
@@ -23,7 +26,9 @@ export default function FavoriteItem({ id, title, price, image, discont_price })
     };
 
     return(
-        <div className={s.product_card_container}>
+        <div className=
+        {`${s.product_card_container} ${theme === 'dark' ? s['product_card_container_dark'] : ''}`}
+        >
             <div key={id} className={s.sales_card}>
             <div className={s.icon_container}>
             <img src={heart} className={s.icon} alt="Heart Icon"
