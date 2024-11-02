@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../requests/products';
 import ProductsCard from '../ProductCard';
 import { sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
+import Skeleton from '../Skeleton';
 
 function AllSales() {
     const dispatch = useDispatch();
@@ -36,6 +37,15 @@ function AllSales() {
             max: maxValue
         }))
     }, [minValue, maxValue]);
+
+    const visibleAllSales = productsState
+    .filter((product) => {
+            return discountedProducts ? product.discont_price !== null : true;
+        })
+    .filter(el => el.visible)
+    .map(element => (
+    <ProductsCard key={element.id} {...element}/>
+    ))
 
     return (
         <div className={s.products}>
@@ -73,14 +83,7 @@ function AllSales() {
             </div>
             
             <div className={s.productsList}>
-                {productsState
-                .filter((product) => {
-                        return discountedProducts ? product.discont_price !== null : true;
-                    })
-                .filter(el => el.visible)
-                .map(element => (
-                <ProductsCard key={element.id} {...element}/>
-                ))}
+                {productsState.length === 0 ? <Skeleton count={11}/> : visibleAllSales}
             </div>
         </div>
     );
