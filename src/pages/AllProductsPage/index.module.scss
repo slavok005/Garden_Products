@@ -43,3 +43,10 @@
   background-color: #ddd;
 }
 
+.container {
+  background: var(--white, #fffff1);
+}
+
+.container_dark {
+  background: var(--white, #424436);
+}
