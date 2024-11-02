@@ -8,7 +8,7 @@ const AllProductsPage = () => {
   const {theme} = useContext(ThemeContext);
 
   return (
-    <div className={s.container}>
+    <div className={`${s.container} ${theme === 'dark' ? s['container_dark'] : ''}`}>
       <div className={s.breadcrumbs}>
         <div className={s.crumbBox}>
           <Link to="/" className={s.crumbText}>

@@ -6,20 +6,22 @@
 
 
 .footer {
-    margin-top: 70px;
+    // margin-top: 70px;
     padding: 0 40px 80px 40px;
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start
+    align-items: flex-start;
+    background-color: #fffff1;
 }
 
 .footer-dark {
+  background-color: #424436!important;
   p {
     color: #ffff!important;
   }
   .contact_item{
-    background-color: #383A2C;
+    background-color: #383A2C!important;
   }
 }
 
