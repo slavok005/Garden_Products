@@ -3,9 +3,8 @@ import s from './index.module.scss';
 import { getAllProducts } from '../requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsCard from '../ProductCard';
-import { changeStatusAction, getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
+import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
 import { ThemeContext } from '../../ThemeContext';
-import Skeleton from '../Skeleton';
 
 function AllProducts() {
     const {theme} = useContext(ThemeContext);
@@ -28,7 +27,6 @@ function AllProducts() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(changeStatusAction())
         dispatch(getAllProducts);
     }, []);
 
@@ -38,10 +36,6 @@ function AllProducts() {
             max: maxValue
         }))
     }, [minValue, maxValue]);
-
-    const visibleProducts = allProductsState
-        .filter((el) => el.visible)
-        .map((el) => <ProductsCard key={el.id} {...el} />);
 
         return (
             <div className={s.products}>
@@ -92,7 +86,13 @@ function AllProducts() {
                     </div>
                 </div>
                     <div className={s.productsList}>
-                        {allProductsState.length === 0 ? <Skeleton count={12}/> : visibleProducts}
+                        {allProductsState
+                            .filter(el => el.visible)
+                            .map(el => (
+                            <ProductsCard key= {el.id} {...el} />
+                        ))
+                            // .filter(el => el.visible)
+                        }
                     </div>
             </div>
         );
