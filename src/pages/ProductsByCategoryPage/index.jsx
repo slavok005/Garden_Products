@@ -12,7 +12,7 @@ import {
 } from "../../store/reducers/productsByCategory.js";
 
 function ProductsByCategoryPage() {
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const { id } = useParams();
 
@@ -51,14 +51,15 @@ function ProductsByCategoryPage() {
       })
     );
   }, [minValue, maxValue, dispatch]);
-  console.log(productsByCategoryState);
 
   return (
     <section>
       {productsCategory && productsCategory ? (
         <>
-          <div className=
-          {`${s.breadcrumbs} ${theme === 'dark' ? s['breadcrumbs_dark'] : ''}`}
+          <div
+            className={`${s.breadcrumbs} ${
+              theme === "dark" ? s["breadcrumbs_dark"] : ""
+            }`}
           >
             <div className={s.crumbBox}>
               <Link to="/" className={s.crumbText}>
@@ -110,7 +111,7 @@ function ProductsByCategoryPage() {
                     <div className={s.checkbox}>
                       <input
                         type="checkbox"
-                        class="checkbox"
+                        className="checkbox"
                         id="checkbox"
                         checked={checked}
                         onChange={handleCheck}

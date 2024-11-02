@@ -3,45 +3,40 @@ import s from './index.module.scss';
 import { getAllProducts } from '../requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsCard from '../ProductCard';
-import { changeStatusAction, getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
 import { ThemeContext } from '../../ThemeContext';
 import Skeleton from '../Skeleton';
+import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
 
 function AllProducts() {
     const {theme} = useContext(ThemeContext);
     
     useEffect(() => dispatch(getAllProducts), []);
-    const allProductsState = useSelector(store => store.products.data);
+    const allProductsState = useSelector(store => store.products);
+    const allproductsData = allProductsState.data || [];
 
     const [ checked, setChecked ] = useState(false);
 
     const handleCheck = () => setChecked(!checked)
-    const handleClick = e => dispatch(getDiscountProductsAction(e.target.checked))
+    const handleClick = (e) => 
+        dispatch(getDiscountProductsAction(e.target.checked))
 
     const [ minValue, setMinValue ] = useState('');
     const [ maxValue, setMaxValue ] = useState('');    
-    const handleMinValue = e => setMinValue(e.target.value || 0);
-    const handleMaxValue = e => setMaxValue(e.target.value || Infinity);    
+    const handleMinValue = (e) => setMinValue(e.target.value || 0);
+    const handleMaxValue = (e) => setMaxValue(e.target.value || Infinity);    
     
-    const handleOrder = e => dispatch(sortAllProductsAction(e.target.value));
+    const handleOrder = (e) => dispatch(sortAllProductsAction(e.target.value));
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(changeStatusAction())
-        dispatch(getAllProducts);
-    }, []);
-
-    useEffect(() => {
-        dispatch(sortByPriceAction({
-            min: minValue,
-            max: maxValue
-        }))
-    }, [minValue, maxValue]);
-
-    const visibleProducts = allProductsState
-        .filter((el) => el.visible)
-        .map((el) => <ProductsCard key={el.id} {...el} />);
+        dispatch(
+            sortByPriceAction({
+                min: minValue,
+                max: maxValue
+            })
+        );
+    }, [minValue, maxValue, dispatch]);
 
         return (
             <div className={s.products}>
@@ -57,13 +52,13 @@ function AllProducts() {
                             value={minValue} 
                             onChange={handleMinValue} 
                             placeholder='from'
-                            name='number'
+                            className='number'
                             />
                             <input type="number" 
                             value={maxValue} 
                             onChange={handleMaxValue} 
                             placeholder='to'
-                            name='number'
+                            className='number'
                             />
                             <button></button>
                         </div>
@@ -72,7 +67,7 @@ function AllProducts() {
                             <div className={s.checkbox}>
                                 <input 
                                 type="checkbox"
-                                class='checkbox'
+                                className='checkbox'
                                 id='checkbox'
                                 checked={checked} 
                                 onChange={handleCheck}
@@ -92,7 +87,13 @@ function AllProducts() {
                     </div>
                 </div>
                     <div className={s.productsList}>
-                        {allProductsState.length === 0 ? <Skeleton count={12}/> : visibleProducts}
+                        {allproductsData.length > 0 ?(
+                            allproductsData
+                            .filter((el) => el.visible)
+                            .map((el) => (<ProductsCard key={el.id} {...el} />))
+                        ) : (
+                            <Skeleton length={12}/>
+                        )}
                     </div>
             </div>
         );
