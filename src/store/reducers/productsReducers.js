@@ -27,14 +27,16 @@ export const changeStatusAction = () => ({
 
 const defaultState = {
   data: [],
-  status: 'loading'
+  status: 'loading',
+  AllProductsTitle: {}
 }
 
 export const productsReducer = (state=defaultState, action) => {
   if (action.type === LOAD_ALL_PRODUCTS) {
     return{
       data: action.payload.map(el => ({...el, visible: true })),
-      status: 'ready'
+      status: 'ready',
+      AllProductsTitle: action.payload.products
     } 
   } else if (action.type === SORT_ALL_PRODUCTS) 
     {

@@ -10,8 +10,10 @@ import Skeleton from '../Skeleton';
 function AllSales() {
     const dispatch = useDispatch();
 
-    const productsState = useSelector((store) => store.products.data);
+    useEffect(() => {dispatch(getAllProducts);}, []);
+    const productsState = useSelector((store) => store.products);
     const [discountedProducts] = useState(true);
+    const discountedProductsData = productsState.data || [];
 
     const [ minValue, setMinValue ] = useState('');
     const [ maxValue, setMaxValue ] = useState('');
@@ -19,17 +21,7 @@ function AllSales() {
     const handleMinValue = e => setMinValue(e.target.value || 0);
     const handleMaxValue = e => setMaxValue(e.target.value || Infinity);
 
-    // const filteredProducts = productsState
-    // .filter((product) => {
-    //     return discountedProducts ? product.discont_price !== null : true;
-    // });
-
     const handleOrder = e => dispatch(sortAllProductsAction(e.target.value));
-
-
-    useEffect(() => {
-        dispatch(getAllProducts);
-    }, []);
 
     useEffect(() => {
         dispatch(sortByPriceAction({
@@ -38,14 +30,12 @@ function AllSales() {
         }))
     }, [minValue, maxValue]);
 
-    const visibleAllSales = productsState
-    .filter((product) => {
-            return discountedProducts ? product.discont_price !== null : true;
-        })
-    .filter(el => el.visible)
-    .map(element => (
-    <ProductsCard key={element.id} {...element}/>
-    ))
+    // const visibleAllSales = productsState
+    
+    // .filter(el => el.visible)
+    // .map(element => (
+    // <ProductsCard key={element.id} {...element}/>
+    // ))
 
     return (
         <div className={s.products}>
@@ -83,7 +73,16 @@ function AllSales() {
             </div>
             
             <div className={s.productsList}>
-                {productsState.length === 0 ? <Skeleton count={11}/> : visibleAllSales}
+                {discountedProductsData.length > 0 ? (
+                    discountedProductsData
+                    .filter((product) => {
+                        return discountedProducts ? product.discont_price !== null : true;
+                    })
+                    .filter((el) => el.visible)
+                    .map((el) => (<ProductsCard key={el.id} {...el} />))
+                ) : (
+                    <Skeleton length = {12}/>
+                )}
             </div>
         </div>
     );
