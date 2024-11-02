@@ -104,7 +104,7 @@ export default function FavoritePage() {
                     <div className={s.checkbox}>
                       <input
                         type="checkbox"
-                        class="checkbox"
+                        className="checkbox"
                         id="checkbox"
                         checked={checked}
                         onChange={handleCheck}
