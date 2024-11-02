@@ -21,7 +21,6 @@ function DiscountForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // предотвращаем перезагрузку страницы
-    // console.log('Form Data:', formData);
     // Здесь можно добавить дальнейшую обработку данных, например, отправку на сервер
   };
   return (
@@ -65,9 +64,11 @@ function DiscountForm() {
                 required
               />
             </label>
-            <Link to='/sales'>
-              <button className={s.discountbutton}>Get a discount</button>
-            </Link>            
+            
+              <button className={s.discountbutton}
+              type='submit'>
+              <Link to='/sales' type='submit'>Get a discount</Link>
+              </button>
           </form>
         </div>
     </div>

@@ -1,8 +1,9 @@
 import React from "react";
+import s from './index.module.scss'
 
-export default function Skeleton() {
+export default function Skeleton({ count }) {
     return (
-        <div>
+        <div className={s.skeleton}>
             {Array.from({ length: count }).map((_, index) => 
             <div key={index} />
             )}

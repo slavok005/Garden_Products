@@ -3,8 +3,9 @@ import s from './index.module.scss';
 import { getAllProducts } from '../requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsCard from '../ProductCard';
-import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
+import { changeStatusAction, getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
 import { ThemeContext } from '../../ThemeContext';
+import Skeleton from '../Skeleton';
 
 function AllProducts() {
     const {theme} = useContext(ThemeContext);
@@ -27,6 +28,7 @@ function AllProducts() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(changeStatusAction())
         dispatch(getAllProducts);
     }, []);
 
@@ -37,6 +39,9 @@ function AllProducts() {
         }))
     }, [minValue, maxValue]);
 
+    const visibleProducts = allProductsState
+        .filter((el) => el.visible)
+        .map((el) => <ProductsCard key={el.id} {...el} />);
 
         return (
             <div className={s.products}>
@@ -87,13 +92,7 @@ function AllProducts() {
                     </div>
                 </div>
                     <div className={s.productsList}>
-                        {allProductsState
-                            .filter(el => el.visible)
-                            .map(el => (
-                            <ProductsCard key= {el.id} {...el} />
-                        ))
-                            // .filter(el => el.visible)
-                        }
+                        {allProductsState.length === 0 ? <Skeleton count={12}/> : visibleProducts}
                     </div>
             </div>
         );
