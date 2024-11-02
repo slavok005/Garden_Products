@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { decrementCountAction, deleteProductFromCartAction, incrementCountAction } from '../../store/reducers/cartReducer';
 import s from './index.module.scss'
+import { ThemeContext } from '../../ThemeContext';
 
 export default function CartItem({ 
     id, 
@@ -12,10 +13,15 @@ export default function CartItem({
     discont_price 
 }) {
 
+    const {theme} = useContext(ThemeContext);
+
+
     const dispatch = useDispatch();
 
     return(
-        <div className={s.cartitem}>
+        <div className=
+        {`${s.cartitem} ${theme === 'dark' ? s['cartitem_dark'] : ''}`}
+        >
             <img 
             src={`http://localhost:3333${image}`} 
             // alt={title}

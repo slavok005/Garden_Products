@@ -4,7 +4,7 @@
     width: 780px;
     height: 180px;
     gap: 32px;
-    border-radius: var(--radius-big, 1px);
+    border-radius: var(--radius-big, 10px);
     border: 1px solid var(--grey-divider, #DDD);
     overflow: hidden;
     .cartimgcontainer {
@@ -16,6 +16,47 @@
         // height: 180px;
     }   
 }
+
+.cartitem_dark {
+    background: #383A2C;
+    border: 1px solid var(--grey-divider, #888);
+    .hcart{
+        button {
+            color: grey;
+            background: none;
+        }
+        .hcartt{
+            color: #fff!important;
+        }
+    }
+    .pricecontainer {
+        .containerprice{
+            color: #fff!important;
+        }    
+        .discount_pricecontainer{
+            color: #8B8B8B!important;
+        }
+    }
+    .pricecartcontainer {
+        .cartcontainercounter{
+            border-radius: var(--radius-small, 10px);
+            border: 1px solid var(--grey-divider, grey);
+            background: #383A2C;
+            button {
+                border: 1px solid var(--grey-divider, grey);
+                background: #383A2C;
+                color: grey!important;
+            }
+        }
+        .countercontainer {
+            p {
+                color: #fff!important;
+            }
+            background: #383A2C;
+        }
+    }
+}
+
 .cartcontentcontainer{
     padding-top: 32px;
     padding-right: 32px;
@@ -68,12 +109,14 @@
     border-top: 1px;
     border-bottom: 1px;
     justify-content: space-between;
+    border-radius: var(--radius-small, 10px);
+    border: 1px solid var(--grey-divider, #DDD);
 }
 
 .cartcontainercounter button{
     width: 58px;
     height: 58px;
-    border-radius: var(--radius-small, 1px);
+    border-radius: var(--radius-small, 10px);
     border: 1px solid var(--grey-divider, #DDD);
 }
 
@@ -87,11 +130,7 @@
     font-size: 20px;
     line-height: 26px;
     width: 96px;
-    height: 58px;
-    border-top: 1px;
-    border-bottom: 1px;
-    border-radius: var(--radius-small, 1px);
-    border: 1px solid var(--grey-divider, #DDD);
+    // height: 58px;
 }
 
 .pricecontainer {
@@ -99,6 +138,9 @@
     height: 44px;
     display: flex;
     gap: 16px;
+    p {
+        color: black;
+    }
 }
 
 .containerprice{

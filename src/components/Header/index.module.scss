@@ -282,6 +282,8 @@
 .header-dark {
   display: flex;
   background: #424436!important;
+  border-bottom: 1px solid var(--grey-divider, #888);
+
   // color: #ddd;
   a {
     color: white;
