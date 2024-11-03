@@ -17,9 +17,13 @@ function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
-      <div className={`main_container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
-      <Routes>        
-        <Route path="/" element={<Layout/>}>
+    <div
+      className={`main_container ${
+        theme === "dark" ? "dark-theme" : "light-theme"
+      }`}
+    >
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/products" element={<AllProductsPage />} />

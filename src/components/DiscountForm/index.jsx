@@ -20,8 +20,7 @@ function DiscountForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // предотвращаем перезагрузку страницы
-    // Здесь можно добавить дальнейшую обработку данных, например, отправку на сервер
+    e.preventDefault(); 
   };
   return (
     <div className={s.discountSection}>

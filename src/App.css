@@ -1,6 +1,7 @@
-*{
+* {
     font-family: "Montserrat", sans-serif;
 }
+
 html {
     padding: 0;
     margin: 0;
@@ -13,6 +14,7 @@ body {
     font-size: 18px;
     font-style: normal;
 }
+
 ul,
 li,
 ol {
@@ -37,10 +39,6 @@ button {
     margin: 0 auto;
 }
 
-/* .container {
-    max-width: 1440px;
-    background-color:rgb(190, 118, 8);
-} */
 
 a {
     border: none;
@@ -48,5 +46,5 @@ a {
     text-decoration: none;
     outline: none;
     color: inherit;
-    /* использует в элементе свойства родительского элемента*/
+
 }
