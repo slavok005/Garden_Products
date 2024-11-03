@@ -31,7 +31,7 @@ export default function CartItem({
         <div className={s.hcart}>
           <p className={s.hcartt}>{title}</p>
           <button className={s.button_close} onClick={() => dispatch(deleteProductFromCartAction(id))}>
-            <p>X</p>
+            <span>X</span>
           </button>
         </div>
         <div className={s.pricecartcontainer}>
