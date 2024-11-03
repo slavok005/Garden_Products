@@ -90,13 +90,14 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
-  &:hover{
+  
+
+}
+.button_close :hover{
     background-color: #bdce43;
     transform: translateY(-3px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
  
-}
-
 }
 
 .pricecartcontainer {

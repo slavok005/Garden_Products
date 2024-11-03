@@ -91,7 +91,7 @@ export default function CartPage() {
               <h3 className={s.order_details}>Order Details</h3>
               <p className={s.items}> {totalCount} Items</p>
               <p className={s.total}>
-                Total <p className={s.price}>${totalPrice}</p>{" "}
+                Total <span className={s.price}>${totalPrice}</span>{" "}
               </p>
               <div>
                 <label htmlFor="name">Name:</label>
