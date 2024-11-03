@@ -3,8 +3,6 @@ import s from './index.module.scss';
 import { getAllProducts } from '../requests/products';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsCard from '../ProductCard';
-import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
-import { ThemeContext } from '../../ThemeContext';
 import { ThemeContext } from '../../ThemeContext';
 import Skeleton from '../Skeleton';
 import { getDiscountProductsAction, sortAllProductsAction, sortByPriceAction } from '../../store/reducers/productsReducers';
@@ -32,24 +30,13 @@ function AllProducts() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllProducts);
-    }, []);
-
-    useEffect(() => {
-        dispatch(sortByPriceAction({
-            min: minValue,
-            max: maxValue
-        }))
-    }, [minValue, maxValue]);
         dispatch(
             sortByPriceAction({
                 min: minValue,
                 max: maxValue
             })
         );
-    } 
-    [minValue, maxValue, dispatch];
-
+    }, [minValue, maxValue, dispatch]);
 
         return (
             <div className={s.products}>
@@ -100,14 +87,6 @@ function AllProducts() {
                     </div>
                 </div>
                     <div className={s.productsList}>
-                        {allProductsState
-                            .filter(el => el.visible)
-                            .map(el => (
-                            <ProductsCard key= {el.id} {...el} />
-                        ))
-                            // .filter(el => el.visible)
-                        }
-
                         {allproductsData.length > 0 ?(
                             allproductsData
                             .filter((el) => el.visible)
@@ -115,10 +94,9 @@ function AllProducts() {
                         ) : (
                             <Skeleton length={12}/>
                         )}
-
                     </div>
             </div>
         );
-
+}
 
 export default AllProducts;
