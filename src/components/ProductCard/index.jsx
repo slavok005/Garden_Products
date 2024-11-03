@@ -6,14 +6,18 @@ import baggreen from "./images/cart green.svg";
 import heartgreen from "./images/heart green.svg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductToCartAction, deleteProductFromCartAction } from "../../store/reducers/cartReducer";
-import { addProductToFavoriteAction, deleteProductFromFavoriteAction } from "../../store/reducers/favoriteReducer";
+import {
+  addProductToCartAction,
+  deleteProductFromCartAction,
+} from "../../store/reducers/cartReducer";
+import {
+  addProductToFavoriteAction,
+  deleteProductFromFavoriteAction,
+} from "../../store/reducers/favoriteReducer";
 import { ThemeContext } from "../../ThemeContext";
 
 const ProductsCard = ({ id, title, image, price, discont_price }) => {
-
   const { theme } = useContext(ThemeContext);
-
 
   const dispatch = useDispatch();
 
@@ -21,52 +25,51 @@ const ProductsCard = ({ id, title, image, price, discont_price }) => {
     ? Math.round(((price - discont_price) / price) * 100)
     : null;
 
-  // Проверка корзины
   const cart = useSelector((state) => state.cart);
   const isInCart = cart.some((product) => product.id === id);
 
-  // Проверка избранного
   const favorites = useSelector((state) => state.favorite);
   const isInFavorite = favorites.some((product) => product.id === id);
 
-  // Обработчик для добавления/удаления товара из корзины
   const handleCartClick = () => {
     if (isInCart) {
-      dispatch(deleteProductFromCartAction(id)); // Если товар в корзине, удаляем его
+      dispatch(deleteProductFromCartAction(id));
     } else {
-      dispatch(addProductToCartAction({ id, discont_price, price, title, image })); // Если товара нет в корзине, добавляем его
+      dispatch(
+        addProductToCartAction({ id, discont_price, price, title, image })
+      );
     }
   };
 
-  // Обработчик для добавления/удаления товара из избранного
   const handleFavoriteClick = () => {
     if (isInFavorite) {
-      dispatch(deleteProductFromFavoriteAction(id)); // Если товар в избранном, удаляем его
+      dispatch(deleteProductFromFavoriteAction(id));
     } else {
-      dispatch(addProductToFavoriteAction({ id, image, title, price, discont_price })); // Если товара нет в избранном, добавляем его
+      dispatch(
+        addProductToFavoriteAction({ id, image, title, price, discont_price })
+      );
     }
   };
 
   return (
-    <div key={id} className=
-    // {s.sales_card}
-    {`${s.sales_card} ${theme === 'dark' ? s['sales_card_dark'] : ''}`}
+    <div
+      key={id}
+      className={`${s.sales_card} ${
+        theme === "dark" ? s["sales_card_dark"] : ""
+      }`}
     >
       <div className={s.icon_container}>
-        {/* Показ иконки сердца */}
         <img
-          src={isInFavorite ? heartgreen : heart} // Если в избранном, показываем зелёное сердце
+          src={isInFavorite ? heartgreen : heart}
           className={s.icon}
-          alt={isInFavorite ? "Green Heart Icon" : "Heart Icon"} // Добавляем строку для alt
-          onClick={handleFavoriteClick} // Обработка клика на сердце
+          alt={isInFavorite ? "Green Heart Icon" : "Heart Icon"}
+          onClick={handleFavoriteClick}
         />
-
-        {/* Показ иконки корзины */}
         <img
-          src={isInCart ? baggreen : bag} // Если в корзине, показываем зелёную корзину
+          src={isInCart ? baggreen : bag}
           className={s.icon}
-          alt={isInCart ? "Green Bag Icon" : "Bag Icon"} // Добавляем строку для alt
-          onClick={handleCartClick} // Обработка клика на корзину
+          alt={isInCart ? "Green Bag Icon" : "Bag Icon"}
+          onClick={handleCartClick}
         />
       </div>
 

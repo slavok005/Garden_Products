@@ -10,9 +10,7 @@ import SingleProductCard from "../../components/SingleProductCard";
 import { ThemeContext } from "../../ThemeContext";
 
 export default function SingleProductPage() {
-
-
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const { product_id } = useParams();
 
   const { id } = useParams();
@@ -36,8 +34,10 @@ export default function SingleProductPage() {
   }, [dispatch, categoriesID]);
 
   return (
-    <div className=
-    {`${s.single_prdouct_page} ${theme === 'dark' ? s['single_prdouct_page_dark'] : ''}`}
+    <div
+      className={`${s.single_prdouct_page} ${
+        theme === "dark" ? s["single_prdouct_page_dark"] : ""
+      }`}
     >
       <div className={s.breadcrumbs}>
         <div className={s.crumbBox}>
@@ -59,12 +59,9 @@ export default function SingleProductPage() {
         </div>
         <div className={s.line}></div>
         <div className={s.crumbBox}>
-          <div className={s.crumbTextBlack}>
-            {singleProductState?.title}
-          </div>
+          <div className={s.crumbTextBlack}>{singleProductState?.title}</div>
         </div>
       </div>
-
       <SingleProductCard />
     </div>
   );

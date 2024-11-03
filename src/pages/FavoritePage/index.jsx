@@ -19,7 +19,7 @@ export default function FavoritePage() {
   const dispatch = useDispatch();
 
   const [checked, setChecked] = useState(false);
-  const [minValue, setMinValue] = useState('');
+  const [minValue, setMinValue] = useState("");
   const [maxValue, setMaxValue] = useState(Infinity);
 
   const handleCheck = () => {
@@ -42,7 +42,7 @@ export default function FavoritePage() {
 
   const filteredAndSortedFavorites = favoriteState.filter((el) => el.visible);
 
-  useEffect (
+  useEffect(
     () => localStorage.setItem("favorite", JSON.stringify(favoriteState)),
     [favoriteState]
   );
@@ -80,10 +80,7 @@ export default function FavoritePage() {
             <div>
               <div className={s.sortedby}>
                 <div className={s.sortproductscontainer}>
-                  <div
-                    className={s.sortedbyprice}
-                    // onSubmit={handleFilter}
-                  >
+                  <div className={s.sortedbyprice}>
                     <b>Price</b>
                     <input
                       type="number"
@@ -108,7 +105,6 @@ export default function FavoritePage() {
                         id="checkbox"
                         checked={checked}
                         onChange={handleCheck}
-                        // onClick={handleClick}
                       />
                     </div>
                   </div>

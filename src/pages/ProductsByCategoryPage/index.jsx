@@ -85,10 +85,7 @@ function ProductsByCategoryPage() {
               <h2>{productsByCategoryState.categoryTitle?.title}</h2>
               <div className={s.sortedby}>
                 <div className={s.sortproductscontainer}>
-                  <div
-                    className={s.sortedbyprice}
-                    // onSubmit={handleFilter}
-                  >
+                  <div className={s.sortedbyprice}>
                     <b>Price</b>
                     <input
                       type="number"
