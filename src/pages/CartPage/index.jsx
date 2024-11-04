@@ -38,17 +38,7 @@ export default function CartPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
-    //     setTimeout(() => {
-    //         setFormData({
-    //             name: '',
-    //             phone: '',
-    //             email: ''
-    //         });
-    //         dispatch(deleteAllAction());
-    //         setIsModalOpen(false);
-    //     }
-    //     , 5000
-    // );
+ 
   };
   const closeSubmit = () => {
     setFormData({

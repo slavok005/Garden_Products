@@ -7,6 +7,7 @@ import {
 } from "../../store/reducers/cartReducer";
 import s from "./index.module.scss";
 import { ThemeContext } from "../../ThemeContext";
+import imageBaseUrl from "../../config";
 
 export default function CartItem({
   id,
@@ -24,7 +25,7 @@ export default function CartItem({
       className={`${s.cartitem} ${theme === "dark" ? s["cartitem_dark"] : ""}`}
     >
       <img
-        src={`http://localhost:3333${image}`}
+        src={`${imageBaseUrl}${image}`}
         className={s.cartimgcontainer}
       />
       <div className={s.cartcontentcontainer}>
