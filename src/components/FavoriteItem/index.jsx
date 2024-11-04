@@ -7,7 +7,6 @@ import { addProductToCartAction } from "../../store/reducers/cartReducer";
 import { Link } from "react-router-dom";
 import s from "./index.module.scss";
 import { ThemeContext } from "../../ThemeContext";
-import imageBaseUrl from "../../config";
 
 export default function FavoriteItem({
   id,
@@ -63,7 +62,7 @@ export default function FavoriteItem({
         <Link to={`/products/${id}`}>
           <div className={s.image_container}>
             <img
-              src={`${imageBaseUrl}${image}`}
+              src={`http://localhost:3333${image}`}
               alt={title}
               className={s.sale_image}
             />

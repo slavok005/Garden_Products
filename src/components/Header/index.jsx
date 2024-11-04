@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useState } from "react";
 import { addProductToCartAction } from "../../store/reducers/cartReducer";
 import { ThemeContext } from "../../ThemeContext";
-import imageBaseUrl from "../../config";
 
 function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -110,7 +109,7 @@ function Header() {
               <div className={s.modal_product}>
                 <div className={s.modal_product_content}>
                   <img
-                    src={`${imageBaseUrl}${productOfTheDay.image}`}
+                    src={`http://localhost:3333${productOfTheDay.image}`}
                     alt={productOfTheDay.title}
                   />
                   <div className={s.modal_product_txt}>

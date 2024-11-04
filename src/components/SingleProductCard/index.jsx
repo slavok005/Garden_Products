@@ -15,7 +15,6 @@ import {
 } from "../../store/reducers/cartReducer";
 import CartItem from "../CartItem";
 import { ThemeContext } from "../../ThemeContext";
-import imageBaseUrl from "../../config";
 
 const SingleProductCard = () => {
   const {theme} = useContext(ThemeContext);
@@ -101,7 +100,7 @@ const SingleProductCard = () => {
       <div>
         <div className={s.img_container}>
           <img
-            src={`${imageBaseUrl}${image}`}
+            src={`http://localhost:3333${image}`}
             className={s.product_image}
             onClick={handleImageClick}
             alt={title}
@@ -112,7 +111,7 @@ const SingleProductCard = () => {
           <div className={s.modal} onClick={closeModal}>
             <div className={s.modal_content}>
               <img
-                src={`${imageBaseUrl}${image}`}
+                src={`http://localhost:3333${image}`}
                 className={s.full_image}
                 alt={title}
               />

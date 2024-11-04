@@ -15,7 +15,6 @@ import {
   deleteProductFromFavoriteAction,
 } from "../../store/reducers/favoriteReducer";
 import { ThemeContext } from "../../ThemeContext";
-import imageBaseUrl from "../../config";
 
 const ProductsCard = ({ id, title, image, price, discont_price }) => {
   const { theme } = useContext(ThemeContext);
@@ -77,7 +76,7 @@ const ProductsCard = ({ id, title, image, price, discont_price }) => {
       <Link to={`/products/${id}`}>
         <div className={s.image_container}>
           <img
-            src={`${imageBaseUrl}${image}`}
+            src={`http://localhost:3333${image}`}
             alt={title}
             className={s.sale_image}
           />
