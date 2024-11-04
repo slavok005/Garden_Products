@@ -37,7 +37,7 @@ function Header() {
       setProductOfTheDay(savedProduct);
       setLoading(false);
     } else {
-      fetch("http://localhost:3333/products/all")
+      fetchData("/products/all")
         .then((response) => {
           if (!response.ok) throw new Error("Error fetching products");
           return response.json();
