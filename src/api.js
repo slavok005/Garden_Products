@@ -1,5 +1,5 @@
 // Получение URL API из переменных окружения
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3333";
+const apiUrl = import.meta.env.VITE_API_URL || "https://gardenshopback-erpo.onrender.com";
 
 // Функция для выполнения запроса к API
 export const fetchData = async (endpoint) => {
@@ -15,3 +15,4 @@ export const fetchData = async (endpoint) => {
     throw error;
   }
 };
+console.log("API URL:", apiUrl);
