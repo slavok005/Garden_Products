@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useState } from "react";
 import { addProductToCartAction } from "../../store/reducers/cartReducer";
 import { ThemeContext } from "../../ThemeContext";
+import { fetchData } from "../../api";
 
 function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
