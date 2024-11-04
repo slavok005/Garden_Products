@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useState } from "react";
 import { addProductToCartAction } from "../../store/reducers/cartReducer";
 import { ThemeContext } from "../../ThemeContext";
-import { fetchData } from "../../api";
 
 function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -38,7 +37,7 @@ function Header() {
       setProductOfTheDay(savedProduct);
       setLoading(false);
     } else {
-      fetchData("/products/all")
+      fetch("http://localhost:3333/products/all")
         .then((response) => {
           if (!response.ok) throw new Error("Error fetching products");
           return response.json();
