@@ -1,5 +1,6 @@
 .main {
-  max-width: 1440px;
+  max-width: 1440px; /* Максимальная ширина для контейнера */
+  margin: 0 auto; /* Выравнивание по центру страницы */
   padding-left: 30px;
   min-height: 594px;
   display: flex;
@@ -50,3 +51,60 @@
   transform: translateY(-3px); /* Лёгкое перемещение вверх при наведении */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта объема */
 }
+@media (max-width: 1000px) {
+  .main  {
+    max-width: 1000px; /* Максимальная ширина для контейнера */
+    margin: 0 auto; /* Выравнивание по центру страницы */
+
+ 
+}
+}
+
+@media  (max-width:768px) {
+  .main {
+    
+    max-width: 768px; /* Максимальная ширина для контейнера */
+    margin: 0 auto; /* Выравнивание по центру страницы */
+    width: 768px;
+    height: 634px;
+    flex-shrink: 0;
+  }}
+  .title{
+    
+    color: var(--txt-white, #FFF);
+font-family: Montserrat;
+font-size: 68px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 74.8px */
+  }
+  @media (max-width: 480px){
+    .main{
+      width: 480px;
+height: 600px;
+flex-shrink: 0;
+    }
+    .title{
+      color: var(--txt-white, #FFF);
+font-family: Montserrat;
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 66px */
+    }
+   
+  }
+  @media (max-width: 360px){
+.main{
+  width: 360px;
+height: 600px;
+flex-shrink: 0;
+}
+.btn a{
+  display: flex;
+padding: var(--radius-big, 12px) 52px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+  }

@@ -1,11 +1,12 @@
 .discountSection {
-  max-width: 1360px;
+  max-width: 1440px; /* Максимальная ширина для контейнера */
+  margin: 0 auto; /* Выравнивание по центру страницы */
   max-height: 486px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-left: 40px;
+
   color: white;
   border-radius: var(--radius-big, 12px);
   background: linear-gradient(80deg, #87933d -0.68%, #55610b 66.66%),

@@ -14,25 +14,30 @@ import { ThemeContext } from "../../ThemeContext";
 
 function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const [burgerActive, setBurgerActive] = useState(false); // состояние для бургера
+
+  const handleBurgerClick = () => {
+    setBurgerActive((prev) => !prev); // переключаем состояние бургера
+  };
 
   const productsState = useSelector((store) => store.products.data);
   const cartState = useSelector((store) => store.cart);
   const favoriteState = useSelector((store) => store.favorite);
-
+  
   const [productOfTheDay, setProductOfTheDay] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   const dispatch = useDispatch();
   const totalCount = cartState.reduce((acc, elem) => acc + elem.count, 0);
   const favoriteCount = favoriteState.reduce((acc, elem) => acc + elem.count, 0);
-
+  
   const today = new Date().toDateString();
-
+  
   useEffect(() => {
     const savedProduct = JSON.parse(localStorage.getItem("productOfTheDay"));
-
+    
     if (savedProduct && savedProduct.discountDate === today) {
       setProductOfTheDay(savedProduct);
       setLoading(false);
@@ -45,13 +50,13 @@ function Header() {
         .then((products) => {
           const randomIndex = Math.floor(Math.random() * products.length);
           const selectedProduct = products[randomIndex];
-
+          
           const discountProduct = {
             ...selectedProduct,
             discountedPrice: (selectedProduct.price * 0.5).toFixed(2),
             discountDate: today,
           };
-
+          
           localStorage.setItem("productOfTheDay", JSON.stringify(discountProduct));
           setProductOfTheDay(discountProduct);
         })
@@ -59,15 +64,15 @@ function Header() {
         .finally(() => setLoading(false));
     }
   }, [today]);
-
+  
   const handleDiscountClick = () => {
     setIsModalOpen(true);
   };
-
+  
   const closeDiscount = () => {
     setIsModalOpen(false);
   };
-
+  
   const handleAddToCart = () => {
     if (productOfTheDay) {
       dispatch(
@@ -84,11 +89,11 @@ function Header() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-
+  
   return (
     <header className={`${s.header} ${theme === "dark" ? s["header-dark"] : ""}`}>
       <div className={s.logo}>
-        <img className="logo" src={img} alt="logo" />
+        <img className={s.logo_1} src={img} alt="logo" />
         <button onClick={toggleTheme}>
           <img className={s.mode} src={theme === "dark" ? img6 : img1} alt="mode" />
         </button>
@@ -96,7 +101,7 @@ function Header() {
 
       <nav className="style-centr">
         <div className={s["discount-banner"]}>
-          <Link onClick={handleDiscountClick}>1 day discount!</Link>
+          <Link className={s.day} onClick={handleDiscountClick}>1 day discount!</Link>
         </div>
 
         {isModalOpen && productOfTheDay && (
@@ -136,23 +141,34 @@ function Header() {
           </div>
         )}
 
-        <div className={s.navList}>
-          <Link to="/">Main Page</Link>
-          <Link to="/categories">Categories</Link>
-          <Link to="/products">All products</Link>
-          <Link to="/sales">All sales</Link>
+        {/* navList, который становится видимым при открытии меню */}
+        <div className={`${s.navList} ${burgerActive ? s.active : ""}`}>
+          <div className={s.header__menu}>
+            <Link to="/">Main Page</Link>
+            <Link to="/categories">Categories</Link>
+            <Link to="/products">All products</Link>
+            <Link to="/sales">All sales</Link>
+          </div>
         </div>
       </nav>
 
       <div className={s.icons}>
         <Link to="/favorites">
-          <img className="icon" src={theme === "dark" ? img4 : img2} alt="favorite icon" />
+          <img className={s.icon} src={theme === "dark" ? img4 : img2} alt="favorite icon" />
           <span>{favoriteCount}</span>
         </Link>
         <Link to="/cart">
-          <img className="cart" src={theme === "dark" ? img5 : img3} alt="cart icon" />
+          <img className={s.cart} src={theme === "dark" ? img5 : img3} alt="cart icon" />
           <span>{totalCount}</span>
         </Link>
+
+        {/* Бургер, который переключает меню */}
+        <div
+          className={`${s.header__burger} ${burgerActive ? s.active : ""}`}
+          onClick={handleBurgerClick}
+        >
+          <span></span>
+        </div>
       </div>
     </header>
   );
